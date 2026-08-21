@@ -89,7 +89,7 @@ const capabilities = [
     index: "03",
     title: "Shape the response",
     body: "I turn results into practical choices for drought resilience, water retention and nature-based adaptation that project teams and decision-makers can use.",
-    image: "/work/shape-the-response-v3.webp",
+    image: "/work/shape-the-response-v4.webp",
   },
 ];
 
