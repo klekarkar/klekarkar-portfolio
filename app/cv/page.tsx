@@ -12,12 +12,108 @@ export default function CvPage() {
   return <main><SiteHeader />
     <InnerHero index="04" label="Curriculum vitae" title="Research depth. Practical range." intro="A career connecting hydrological analysis with the real decisions, infrastructure and collaborations that determine water security." />
     <section className="cv-layout section-shell">
-      <aside><p>PROFILE</p><h2>Katoria Lekarkar</h2><span>Hydrologist & water resources engineer</span><div className="cv-links"><a href="mailto:katoria.lesaalon.lekarkar@vub.be">Email ↗</a><a href="https://www.linkedin.com/in/katoria-lekarkar-504839101/">LinkedIn ↗</a><a href="https://github.com/klekarkar">GitHub ↗</a><a href="https://orcid.org/0000-0003-4527-5422">ORCID ↗</a></div></aside>
+      <aside>
+        <p>PROFILE</p>
+        <h2>Katoria Lekarkar</h2>
+        <span>Hydrologist & water resources engineer</span>
+        <div className="cv-profile-copy">Recently completed PhD focused on water availability, drought and climate adaptation. I combine process-based modelling, environmental data and field observations with practical experience in water planning, infrastructure and international project delivery.</div>
+        <div className="cv-registration"><strong>Professional registration</strong><span>Engineers Board of Kenya · B11549</span></div>
+        <div className="cv-links">
+          <a href="mailto:katoria.lesaalon.lekarkar@vub.be">Email ↗</a>
+          <a href="https://www.linkedin.com/in/katoria-lekarkar-504839101/">LinkedIn ↗</a>
+          <a href="https://github.com/klekarkar">GitHub ↗</a>
+          <a href="https://orcid.org/0000-0003-4527-5422">ORCID ↗</a>
+        </div>
+      </aside>
+
       <div className="cv-main">
-        <section><p className="cv-section-title">EXPERIENCE</p><div className="cv-entry"><span>2020–2026</span><div><h3>Doctoral Researcher</h3><p>Vrije Universiteit Brussel · Water and Climate Research Group</p><small>National drought reconstruction, groundwater-recharge scenarios, nature-based water retention, open science and project coordination.</small></div></div><div className="cv-entry"><span>2017–2020</span><div><h3>Water Resources Engineer</h3><p>Rural Focus Ltd · Kenya</p><small>Feasibility studies, water masterplans, climate-resilience strategies, engineering design, cost estimates and construction supervision.</small></div></div></section>
-        <section><p className="cv-section-title">EDUCATION</p><div className="cv-entry"><span>2026</span><div><h3>PhD in Engineering Sciences</h3><p>Vrije Universiteit Brussel</p><small>Subsurface controls on water availability and climate adaptation in Belgium.</small></div></div><div className="cv-entry"><span>Master’s</span><div><h3>Water Resources Engineering</h3><p>KU Leuven & Vrije Universiteit Brussel</p><small>Interuniversity Programme in Water Resources Engineering.</small></div></div><div className="cv-entry"><span>Bachelor’s</span><div><h3>Civil Engineering</h3><p>Engineering foundation for water infrastructure and project delivery.</p></div></div></section>
-        <section><p className="cv-section-title">TECHNICAL EXPERTISE</p><div className="cv-skill-grid"><div><h3>Hydrology</h3><p>Drought · groundwater recharge · water balance · catchment processes · climate impacts</p></div><div><h3>Modelling</h3><p>mHM · SWAT+ · conceptual models · calibration · scenario assessment</p></div><div><h3>Data & spatial</h3><p>Python · GIS · Google Earth Engine · remote sensing · HPC · visualisation</p></div><div><h3>Project delivery</h3><p>Feasibility · masterplanning · technical reporting · stakeholder engagement · supervision</p></div></div></section>
-        <section><p className="cv-section-title">LANGUAGES</p><p className="cv-language">English <strong>Professional</strong> · Dutch <strong>B1, progressing</strong> · French <strong>Basic</strong></p></section>
+        <section>
+          <p className="cv-section-title">EXPERIENCE</p>
+
+          <div className="cv-entry">
+            <span>2022–2026</span>
+            <div>
+              <h3>PhD Researcher — Water Availability & Climate Adaptation</h3>
+              <p>Vrije Universiteit Brussel · Water and Climate Research Group</p>
+              <small>Investigated how subsurface processes control drought, groundwater recharge and future water availability in Belgium.</small>
+              <ul>
+                <li>Applied the mesoscale Hydrological Model across Belgium to simulate soil moisture, baseflow, groundwater recharge and water availability under historical and future climates.</li>
+                <li>Reconstructed root-zone soil-moisture droughts since 1970 and analysed how droughts develop, persist and recover to improve interpretation of monitoring and preparedness needs.</li>
+                <li>Quantified future groundwater-recharge changes using ten global climate models and four emissions scenarios, identifying greater dependence on winter and spring recharge alongside substantial summer and autumn losses.</li>
+                <li>Evaluated the calibration and transferability of low-cost TOMST soil-moisture sensors for environmental monitoring and field assessment of water-retention measures.</li>
+                <li>Developed SPONGE, a modular process-based model for comparing how nature-based interventions affect soil-water storage, drainage, groundwater recharge and drought resilience.</li>
+                <li>Combined hydrological outputs with machine-learning methods, Python, GIS and high-performance computing to analyse climatic and land-surface controls on water scarcity.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="cv-entry">
+            <span>2023–2026</span>
+            <div>
+              <h3>Project Manager — UNESCO Chair on Open Water Science and Education</h3>
+              <p>Vrije Universiteit Brussel · International programme</p>
+              <small>Managed international work on open hydrological data, low-cost monitoring, open-source modelling and climate-resilient water management.</small>
+              <ul>
+                <li>Coordinated partners, budgets, work plans, deliverables, reporting and communication for projects with a combined value exceeding €1 million.</li>
+                <li>Led the processing, documentation and publication of soil-moisture datasets collected with low-cost environmental sensors through UNESCO-IHP WINS.</li>
+                <li>Developed SWAT+ hydrological-modelling and data-analysis training materials to support Climate Risk Informed Decision Analysis.</li>
+                <li>Co-developed dashboards for communicating spatial and time-series hydrological information to technical and non-technical users.</li>
+                <li>Prepared successful funding proposals and coordinated collaboration among universities, international organisations and water-sector partners.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="cv-entry">
+            <span>Jan 2017<br />– Sep 2020</span>
+            <div>
+              <h3>Water Resources Engineer</h3>
+              <p>Rural Focus Limited · Kenya</p>
+              <small>Delivered water-resource planning, feasibility, engineering design and construction assignments in drought-prone and water-scarce landscapes.</small>
+              <ul>
+                <li>Developed climate-resilient water strategies, masterplans and investment plans for community conservancies, rural settlements, agriculture, livestock and wildlife.</li>
+                <li>Conducted topographic surveys and mapped water sources, pipeline routes and reservoir sites using field survey equipment, GNSS and spatial data.</li>
+                <li>Performed hydrological time-series analysis for river abstraction and dam feasibility, and modelled rural distribution networks to identify pressure losses, deficiencies and opportunities for optimisation.</li>
+                <li>Assessed surface water, groundwater, floodwater and rainwater-harvesting options through technical, cost-benefit and socio-environmental feasibility studies.</li>
+                <li>Designed and costed gravity-fed supplies, solar pumping stations, pipe networks, storage reservoirs and rainwater-harvesting systems; prepared drawings, specifications, bills of quantities and contract documents.</li>
+                <li>Conducted water-quality sampling, investigated pollution sources and developed mitigation measures for domestic, agricultural and wildlife supplies.</li>
+                <li>Led participatory water-resource mapping and translated regional climate information and local knowledge into adaptation priorities and infrastructure plans.</li>
+                <li>Supervised construction to ensure compliance with designs, budgets, schedules, environmental requirements and health-and-safety standards.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p className="cv-section-title">SELECTED RESEARCH & INNOVATION</p>
+          <div className="cv-output-grid">
+            <article><span>01</span><h3>Belgian soil-moisture drought reconstruction</h3><p>Published a national assessment showing that 2011–2020 was Belgium’s driest decade since 1970 and demonstrating the importance of subsurface drought persistence and recovery.</p></article>
+            <article><span>02</span><h3>Future groundwater recharge</h3><p>Assessed recharge seasonality with ten global climate models and four emissions scenarios, revealing a stronger concentration of recharge in winter and spring.</p></article>
+            <article><span>03</span><h3>SPONGE</h3><p>Developed a modular decision-support model for comparing vegetation restoration, infiltration enhancement, wetlands and other water-retention measures.</p></article>
+            <article><span>04</span><h3>Low-cost soil-moisture monitoring</h3><p>Evaluated sensor calibration and transferability and combined field monitoring with modelling to assess water retention in restored landscapes.</p></article>
+          </div>
+        </section>
+
+        <section>
+          <p className="cv-section-title">EDUCATION</p>
+          <div className="cv-entry"><span>2022–2026</span><div><h3>PhD in Engineering Sciences</h3><p>Vrije Universiteit Brussel</p><small>Thesis: <em>Dynamics of subsurface water in a changing climate: An assessment of subsurface controls on water availability and climate adaptation in Belgium.</em></small></div></div>
+          <div className="cv-entry"><span>2020–2022</span><div><h3>MSc in Water Resources Engineering</h3><p>KU Leuven & Vrije Universiteit Brussel</p><small>Thesis on climate-change impacts on agricultural water use and hydrological processes in the Nyando catchment, Kenya.</small></div></div>
+          <div className="cv-entry"><span>2011–2016</span><div><h3>BSc in Civil Engineering</h3><p>University of Nairobi · First Class Honours</p><small>Engineering foundation in water infrastructure, surveying, design and project delivery.</small></div></div>
+        </section>
+
+        <section>
+          <p className="cv-section-title">TECHNICAL EXPERTISE</p>
+          <div className="cv-skill-grid">
+            <div><h3>Hydrology & climate</h3><p>Drought analysis · groundwater recharge · water balance · catchment processes · climate-impact assessment · uncertainty</p></div>
+            <div><h3>Models & engineering</h3><p>mHM · SWAT+ · WetSpass · MIKE 11 · NAM · EPANET · WaterGEMS · conceptual models · hydraulic design</p></div>
+            <div><h3>Data & spatial analysis</h3><p>Python · Pandas · GeoPandas · scikit-learn · QGIS · ArcGIS · Google Earth Engine · remote sensing · HPC · Git/GitHub</p></div>
+            <div><h3>Project delivery</h3><p>Feasibility studies · masterplans · investment planning · proposals · technical reporting · stakeholder engagement · construction supervision</p></div>
+          </div>
+        </section>
+
+        <section>
+          <p className="cv-section-title">LANGUAGES</p>
+          <p className="cv-language">English <strong>Professional</strong> · Swahili <strong>Fluent</strong> · Maasai <strong>Native</strong> · Dutch <strong>B1, progressing</strong> · French <strong>Basic</strong></p>
+        </section>
       </div>
     </section>
     <SiteFooter />
