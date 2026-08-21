@@ -112,7 +112,7 @@ export default function CvPage() {
 
         <section>
           <p className="cv-section-title">LANGUAGES</p>
-          <p className="cv-language">English <strong>Professional</strong> · Swahili <strong>Fluent</strong> · Maasai <strong>Native</strong> · Dutch <strong>B1, progressing</strong> · French <strong>Basic</strong></p>
+          <p className="cv-language">English <strong>Professional</strong> · Swahili <strong>Fluent</strong> · Maasai <strong>Native</strong> · Dutch <strong>B1, progressing</strong></p>
         </section>
       </div>
     </section>
