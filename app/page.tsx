@@ -83,7 +83,7 @@ const capabilities = [
     index: "02",
     title: "Build the evidence",
     body: "I combine hydrological models, geospatial data and field observations to test scenarios and quantify uncertainty—not just produce attractive maps.",
-    image: "/projects/open-water-science.webp",
+    image: "/work/build-the-evidence.webp",
   },
   {
     index: "03",
