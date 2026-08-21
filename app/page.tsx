@@ -1,3 +1,6 @@
+import HydrologyLive from "./hydrology-live";
+import { ArrowIcon, BrandIdentity } from "./site-chrome";
+
 type SelectedWork = {
   number: string;
   eyebrow: string;
@@ -87,10 +90,6 @@ const capabilities = [
   },
 ];
 
-function Arrow() {
-  return <span aria-hidden="true">↗</span>;
-}
-
 function ProjectVisual({ type, image, credit }: { type?: SelectedWork["visual"]; image?: string; credit?: string }) {
   if (image) {
     return (
@@ -135,15 +134,14 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Katoria Lekarkar, home">
-          <span className="brand-mark" aria-hidden="true"><i /></span>
-          <span>LK</span>
+          <BrandIdentity />
         </a>
         <nav aria-label="Primary navigation">
           <a href="/projects">Projects</a>
           <a href="/research">Research</a>
           <a href="/talks">Talks</a>
           <a href="/cv">CV</a>
-          <a className="nav-contact" href="#contact">Let’s talk <Arrow /></a>
+          <a className="nav-contact" href="#contact">Let’s talk <ArrowIcon /></a>
         </nav>
       </header>
 
@@ -155,7 +153,7 @@ export default function Home() {
             I combine hydrological science, modelling and practical engineering to understand water availability—and design responses that hold up in a changing climate.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#work">Explore my work <Arrow /></a>
+            <a className="button button-primary" href="#work">Explore my work <ArrowIcon /></a>
             <a className="button button-quiet" href="mailto:katoria.lesaalon.lekarkar@vub.be">Contact me</a>
           </div>
           <div className="hero-meta">
@@ -169,7 +167,7 @@ export default function Home() {
 
       <section className="credential-strip" aria-label="Professional profile">
         <div><small>BACKGROUND</small><strong>PhD · Engineering Sciences</strong><span>Vrije Universiteit Brussel</span></div>
-        <div><small>FOCUS</small><strong>Water availability</strong><span>Drought · recharge · adaptation</span></div>
+        <div><small>FOCUS</small><strong>Water Security</strong><span>Climate change · water availability · adaptation</span></div>
         <div><small>APPROACH</small><strong>Science into practice</strong><span>Science · decisions · solutions</span></div>
       </section>
 
@@ -180,7 +178,7 @@ export default function Home() {
           <div className="about-copy">
             <p>I am Katoria Lekarkar, a hydrologist and water resources engineer with experience across research, consulting and infrastructure projects in Europe and Africa.</p>
             <p>My work focuses on a deceptively simple question: how much water is available, now and in the future? Answering it means connecting climate, soils, vegetation, rivers and groundwater—and presenting the result so that it leads to a better decision.</p>
-            <a className="text-link" href="#expertise">See how I work <Arrow /></a>
+            <a className="text-link" href="#expertise">See how I work <ArrowIcon /></a>
           </div>
         </div>
       </section>
@@ -225,11 +223,11 @@ export default function Home() {
         <div className="toolbox">
           <div>
             <p className="toolbox-label">CORE AREAS</p>
-            <p>Hydrological modelling · Climate-impact assessment · Groundwater recharge · Soil moisture drought · Nature-based solutions · Water resources planning</p>
+            <div className="keyword-list">{["Hydrological modelling", "Climate-impact assessment", "Groundwater recharge", "Soil moisture drought", "Nature-based solutions", "Water resources planning"].map((item) => <span key={item}>{item}</span>)}</div>
           </div>
           <div>
             <p className="toolbox-label">TOOLS</p>
-            <p>Python · GIS · mHM · SWAT+ · Google Earth Engine · HPC · Remote sensing · Data visualisation</p>
+            <div className="keyword-list">{["Python", "GIS", "mHM", "SWAT+", "Google Earth Engine", "HPC", "Remote sensing", "Data visualisation"].map((item) => <span key={item}>{item}</span>)}</div>
           </div>
         </div>
       </section>
@@ -240,17 +238,16 @@ export default function Home() {
           <p className="kicker light-kicker"><span /> AVAILABLE FOR THE NEXT CHALLENGE</p>
           <h2>Let’s make the water<br />picture <em>clearer.</em></h2>
           <p>If you are working on water availability, drought resilience, climate adaptation or nature-based solutions, I would be glad to hear from you.</p>
-          <a className="button contact-button" href="mailto:katoria.lesaalon.lekarkar@vub.be">Start a conversation <Arrow /></a>
+          <a className="button contact-button" href="mailto:katoria.lesaalon.lekarkar@vub.be">Start a conversation <ArrowIcon /></a>
           <div className="social-links"><a href="https://www.linkedin.com/in/katoria-lekarkar-504839101/">LinkedIn</a><a href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en">Google Scholar</a><a href="https://github.com/klekarkar">GitHub</a><a href="https://orcid.org/0000-0003-4527-5422">ORCID</a></div>
         </div>
       </section>
 
       <footer>
-        <a className="brand footer-brand" href="#top"><span className="brand-mark" aria-hidden="true"><i /></span><span>LK</span></a>
+        <a className="brand footer-brand" href="#top"><BrandIdentity /></a>
         <p>© 2026 Katoria Lekarkar · Hydrology · Water resources · Climate adaptation</p>
         <div><a href="mailto:katoria.lesaalon.lekarkar@vub.be">Email</a><a href="https://www.linkedin.com/in/katoria-lekarkar-504839101/">LinkedIn</a><a href="#top">Back to top ↑</a></div>
       </footer>
     </main>
   );
 }
-import HydrologyLive from "./hydrology-live";

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { InnerHero, SiteFooter, SiteHeader } from "../site-chrome";
+import { ArrowIcon, InnerHero, SiteFooter, SiteHeader } from "../site-chrome";
 
 export const metadata: Metadata = {
   title: "Projects | Katoria Lekarkar",
@@ -202,7 +202,7 @@ export default function ProjectsPage() {
         </article>)}
       </div>
     </section>
-    <section className="page-cta"><p>Have a water challenge that needs a clear plan?</p><a className="button contact-button" href="mailto:katoria.lesaalon.lekarkar@vub.be">Discuss a project <span aria-hidden="true">↗</span></a></section>
+    <section className="page-cta"><p>Have a water challenge that needs a clear plan?</p><a className="button contact-button" href="mailto:katoria.lesaalon.lekarkar@vub.be">Discuss a project <ArrowIcon /></a></section>
     <SiteFooter />
   </main>;
 }
