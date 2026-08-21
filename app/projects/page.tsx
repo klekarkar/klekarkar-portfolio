@@ -140,6 +140,7 @@ const projects = [
     ],
     tags: ["Half-moon bunds", "Water pans", "Dryland agriculture"],
     tone: "green",
+    credit: "Photo: FAO",
   },
   {
     year: "2017–2018",
