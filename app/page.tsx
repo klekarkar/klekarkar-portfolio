@@ -83,13 +83,13 @@ const capabilities = [
     index: "02",
     title: "Build the evidence",
     body: "I combine hydrological models, geospatial data and field observations to test scenarios and quantify uncertainty—not just produce attractive maps.",
-    image: "/work/build-the-evidence-v2.webp",
+    image: "/work/build-the-evidence-v3.webp",
   },
   {
     index: "03",
     title: "Shape the response",
     body: "I turn results into practical choices for drought resilience, water retention and nature-based adaptation that project teams and decision-makers can use.",
-    image: "/work/shape-the-response-v2.webp",
+    image: "/work/shape-the-response-v3.webp",
   },
 ];
 
@@ -216,7 +216,7 @@ export default function Home() {
         </div>
         <div className="capability-grid">
           {capabilities.map((capability) => (
-            <article key={capability.index}>
+            <article className={`capability-${capability.index}`} key={capability.index}>
               <img src={capability.image} alt="" aria-hidden="true" />
               <span>{capability.index}</span>
               <div className="capability-copy">
@@ -225,12 +225,6 @@ export default function Home() {
               </div>
             </article>
           ))}
-        </div>
-        <div className="toolbox">
-          <div>
-            <p className="toolbox-label">TOOLS</p>
-            <div className="keyword-list">{["Python", "GIS", "mHM", "SWAT+", "Google Earth Engine", "HPC", "Remote sensing", "Data visualisation"].map((item) => <span key={item}>{item}</span>)}</div>
-          </div>
         </div>
       </section>
 

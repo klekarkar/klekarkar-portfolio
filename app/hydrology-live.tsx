@@ -3,11 +3,12 @@
 import { useEffect, useState } from "react";
 
 const readings = [
-  { className: "reading-rain", value: (tick: number) => `${(7.4 + Math.sin(tick * .72) * 2.1).toFixed(1)} mm` },
-  { className: "reading-climate", value: (tick: number) => `+${(1.7 + Math.sin(tick * .31) * .5).toFixed(1)} °C` },
-  { className: "reading-flow", value: (tick: number) => `${(2.8 + Math.cos(tick * .55) * .7).toFixed(1)} m³/s` },
-  { className: "reading-soil", value: (tick: number) => `${(38 + Math.sin(tick * .44) * 6).toFixed(0)} %` },
-  { className: "reading-recharge", value: (tick: number) => `${(1.9 + Math.cos(tick * .38) * .5).toFixed(1)} mm/d` },
+  { className: "reading-rain", value: (tick: number) => `Rain ${(7.4 + Math.sin(tick * .72) * 2.1).toFixed(1)} mm` },
+  { className: "reading-climate", value: (tick: number) => `Air ${(18.7 + Math.sin(tick * .31) * 1.9).toFixed(1)} °C` },
+  { className: "reading-et", value: (tick: number) => `ET ${(2.4 + Math.sin(tick * .47) * .6).toFixed(1)} mm/d` },
+  { className: "reading-flow", value: (tick: number) => `Runoff ${(2.8 + Math.cos(tick * .55) * .7).toFixed(1)} m³/s` },
+  { className: "reading-soil", value: (tick: number) => `Soil ${(38 + Math.sin(tick * .44) * 6).toFixed(0)} %` },
+  { className: "reading-recharge", value: (tick: number) => `Recharge ${(1.9 + Math.cos(tick * .38) * .5).toFixed(1)} mm/d` },
 ];
 
 export default function HydrologyLive() {
