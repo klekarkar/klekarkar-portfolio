@@ -20,6 +20,24 @@ The website is hosted with ChatGPT Sites. The `.openai/hosting.json` file links 
 
 Most page content is stored in small arrays near the top of each page file. To add a project, talk or research item, copy one existing object, update its text and keep the same field names.
 
+### Add a new project
+
+Open `app/projects/page.tsx`, find `const projects = [` and copy one complete project object. Paste the copy inside the array and edit:
+
+- `year`, `place` and `title`
+- `copy` for the short text shown on the card
+- `narrative` for the paragraphs revealed by the **+ Read project narrative** control
+- optional `highlights` for outcome bullets
+- `tags` and `tone` for the labels and card colour
+
+Keep each paragraph in quotation marks and separate entries with commas.
+
+### Add a new talk
+
+Open `app/talks/page.tsx`, find `const talks = [` and copy one complete talk object. Edit its `year`, `place`, `title`, `event` and `narrative`. Each item in `narrative` becomes a separate paragraph inside the expandable section.
+
+New objects appear in the same order as they are listed in the array, so place the newest item first.
+
 ## Work locally
 
 Requirements:
