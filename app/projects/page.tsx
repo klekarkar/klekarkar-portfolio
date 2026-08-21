@@ -93,6 +93,7 @@ const projects = [
     ],
     tags: ["Masterplanning", "Demand analysis", "Investment planning"],
     tone: "blue",
+    credit: "Photo: Thomas Lindvig",
   },
   {
     year: "2017–2019",
@@ -182,6 +183,7 @@ export default function ProjectsPage() {
               <small>{project.year} · {project.place}</small>
               <strong>{project.title}</strong>
             </div>
+            {project.credit && <span className="archive-image-credit">{project.credit}</span>}
           </div>
           <div className="archive-body">
             <div className="archive-meta"><span>{project.year}</span><span>{project.place}</span></div>

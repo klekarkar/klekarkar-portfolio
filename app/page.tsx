@@ -7,6 +7,7 @@ type SelectedWork = {
   tags: string[];
   visual?: "sponge" | "recharge";
   image?: string;
+  credit?: string;
 };
 
 const projects: SelectedWork[] = [
@@ -42,6 +43,7 @@ const projects: SelectedWork[] = [
       "The plan prioritised abstraction, storage, distribution, wastewater reuse and investment across normal, dry and exceptional conditions.",
     tags: ["Masterplanning", "Water security", "Rural Focus"],
     image: "/projects/ol-pejeta-masterplan.webp",
+    credit: "Photo: Thomas Lindvig",
   },
   {
     number: "04",
@@ -89,11 +91,12 @@ function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
 
-function ProjectVisual({ type, image }: { type?: SelectedWork["visual"]; image?: string }) {
+function ProjectVisual({ type, image, credit }: { type?: SelectedWork["visual"]; image?: string; credit?: string }) {
   if (image) {
     return (
       <div className="project-art project-image-art" aria-hidden="true">
         <img src={image} alt="" />
+        {credit && <span className="image-credit">{credit}</span>}
       </div>
     );
   }
@@ -191,7 +194,7 @@ export default function Home() {
         <div className="project-list">
           {projects.map((project) => (
             <article className="project-card" key={project.title}>
-              <ProjectVisual type={project.visual} image={project.image} />
+              <ProjectVisual type={project.visual} image={project.image} credit={project.credit} />
               <div className="project-content">
                 <div className="project-number">{project.number}</div>
                 <p className="project-eyebrow">{project.eyebrow}</p>
