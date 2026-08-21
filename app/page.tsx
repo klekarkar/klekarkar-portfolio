@@ -77,16 +77,19 @@ const capabilities = [
     index: "01",
     title: "Understand the system",
     body: "I translate climate, catchment, soil and groundwater processes into a clear picture of where water comes from, where it goes and what controls its availability.",
+    image: "/hero-live-hydrology.webp",
   },
   {
     index: "02",
     title: "Build the evidence",
     body: "I combine hydrological models, geospatial data and field observations to test scenarios and quantify uncertainty—not just produce attractive maps.",
+    image: "/projects/open-water-science.webp",
   },
   {
     index: "03",
     title: "Shape the response",
     body: "I turn results into practical choices for drought resilience, water retention and nature-based adaptation that project teams and decision-makers can use.",
+    image: "/work/sponge-nature-based-solutions.webp",
   },
 ];
 
@@ -214,17 +217,16 @@ export default function Home() {
         <div className="capability-grid">
           {capabilities.map((capability) => (
             <article key={capability.index}>
+              <img src={capability.image} alt="" aria-hidden="true" />
               <span>{capability.index}</span>
-              <h3>{capability.title}</h3>
-              <p>{capability.body}</p>
+              <div className="capability-copy">
+                <h3>{capability.title}</h3>
+                <p>{capability.body}</p>
+              </div>
             </article>
           ))}
         </div>
         <div className="toolbox">
-          <div>
-            <p className="toolbox-label">CORE AREAS</p>
-            <div className="keyword-list">{["Hydrological modelling", "Climate-impact assessment", "Groundwater recharge", "Soil moisture drought", "Nature-based solutions", "Water resources planning"].map((item) => <span key={item}>{item}</span>)}</div>
-          </div>
           <div>
             <p className="toolbox-label">TOOLS</p>
             <div className="keyword-list">{["Python", "GIS", "mHM", "SWAT+", "Google Earth Engine", "HPC", "Remote sensing", "Data visualisation"].map((item) => <span key={item}>{item}</span>)}</div>
