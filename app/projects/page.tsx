@@ -14,6 +14,7 @@ const projects = [
     year: "2023–2026",
     place: "Boechout, Belgium",
     title: "Water retention potential of a nature conservation area",
+    image: "/projects/boechout-water-retention.webp",
     copy: "Combining soil-moisture observations, groundwater data and a mechanistic model to evaluate how restored landscapes retain water.",
     narrative: [
       "This research evaluates the water-retention potential of a restored nature conservation area managed by Natuurpunt in Boechout, Belgium.",
@@ -27,6 +28,7 @@ const projects = [
     year: "2023–2026",
     place: "Brussels · International",
     title: "UNESCO Chair on Open Water Science and Education",
+    image: "/projects/open-water-science.webp",
     copy: "Coordinating open hydrological data, low-cost soil-moisture monitoring, citizen science tools and SWAT+ capacity building.",
     narrative: [
       "The UNESCO Chair on Open Water Science and Education promotes open data, open software, open hardware and citizen science to strengthen hydrological monitoring, modelling and education.",
@@ -45,6 +47,7 @@ const projects = [
     year: "2020",
     place: "Laikipia, Kenya",
     title: "Loiragai Spring Water Supply",
+    image: "/projects/loiragai-spring.webp",
     copy: "Technical assessment and rehabilitation design for a gravity-fed spring system serving domestic users, livestock and wildlife.",
     narrative: [
       "Loiragai Spring Water Supply is a gravity-fed scheme serving the Il Ngwesi area. Inadequate maintenance, floods and wildlife damage had caused the system to deteriorate and nearly stop functioning, even though much of the original infrastructure remained in place.",
@@ -63,6 +66,7 @@ const projects = [
     year: "2019",
     place: "Laikipia & Samburu, Kenya",
     title: "Community conservancy water management plans",
+    image: "/projects/conservancy-planning.webp",
     copy: "Five-year strategies to improve water accessibility and reliability for communities, livestock, agriculture and wildlife.",
     narrative: [
       "The Northern Rangelands Trust supports community conservancies across the drylands of northern and coastal Kenya, where reliable access to water is central to livelihoods, rangeland management, wildlife conservation and the prevention of resource-based conflict.",
@@ -75,6 +79,7 @@ const projects = [
     year: "2018–2019",
     place: "Laikipia, Kenya",
     title: "Ol Pejeta Conservancy water masterplan",
+    image: "/projects/ol-pejeta-masterplan.webp",
     copy: "A 20-year plan connecting supply-demand assessment, infrastructure priorities, wastewater reuse and phased investment.",
     narrative: [
       "Ol Pejeta Conservancy needed a long-term plan to improve water security for staff housing, tourism facilities, livestock and wildlife under increasing climate variability and competing demands.",
@@ -93,6 +98,7 @@ const projects = [
     year: "2017–2019",
     place: "Northern Kenya",
     title: "Climate-resilient water services for conservancies",
+    image: "/projects/climate-resilient-services.webp",
     copy: "Water-resource mapping, future climate assessment and infrastructure delivery in water-stressed community conservancies.",
     narrative: [
       "This work formed part of the Climate Resilient Community Conservancies Programme, which aimed to improve climate resilience and water security in selected conservancies across the arid and semi-arid regions of northern Kenya.",
@@ -105,6 +111,7 @@ const projects = [
     year: "2018–2019",
     place: "Samburu, Kenya",
     title: "Meibae rock-catchment water supply",
+    image: "/projects/meibae-rock-catchment.webp",
     copy: "Feasibility, design and construction supervision for a 150,000-litre rainwater storage system and solar pumping scheme.",
     narrative: [
       "Meibae Conservancy needed a permanent, cost-effective water supply for its rangers’ camp after repeated breakdowns made the existing pipeline unreliable. Following an assessment of groundwater, pipeline and rainwater-harvesting options, a rock catchment and large masonry storage tank were selected.",
@@ -123,6 +130,7 @@ const projects = [
     year: "2017",
     place: "Turkana, Kenya",
     title: "Dryland agriculture feasibility for Kalobeyei",
+    image: "/projects/kalobeyei-drylands.webp",
     copy: "Assessment of rainwater harvesting, farm ponds, spate irrigation, dams and groundwater options for a refugee-hosting settlement.",
     narrative: [
       "This feasibility study examined water-supply options for dryland agriculture in the Kalobeyei settlement area, which hosts a large refugee population alongside local communities in an extremely water-scarce environment.",
@@ -136,6 +144,7 @@ const projects = [
     year: "2017–2018",
     place: "Kenya",
     title: "UNICEF WASH design manual",
+    image: "/projects/unicef-wash.webp",
     copy: "Revision of drawings, bills of quantities and cost estimates for school sanitation and water-storage facilities.",
     narrative: [
       "The assignment supported revision of Kenya’s Design and Construction Manual for Water, Sanitation and Hygiene Facilities in Primary Schools. I revised technical drawings for sanitation and water-storage facilities and updated the corresponding bills of quantities and cost estimates so the manual could provide consistent, buildable and costed reference designs.",
@@ -147,6 +156,7 @@ const projects = [
     year: "2017",
     place: "Tana River, Kenya",
     title: "Ishaqbin community water supply",
+    image: "/projects/ishaqbin-water-supply.webp",
     copy: "Topographic survey and distribution-system design for community, livestock and wildlife water needs.",
     narrative: [
       "The project began with a reconnaissance of the existing distribution network supplied by a borehole on the banks of the River Tana. I then completed a topographic survey of proposed pipeline routes serving community drinking-water points, livestock and wildlife within a sanctuary.",
@@ -164,7 +174,15 @@ export default function ProjectsPage() {
       <div className="archive-summary"><span>10 selected projects</span><span>Europe + Africa</span><span>Strategy → implementation</span></div>
       <div className="archive-grid">
         {projects.map((project, index) => <article className={`archive-card ${project.tone}`} key={project.title}>
-          <div className="archive-visual"><span>{String(index + 1).padStart(2, "0")}</span><i /><i /><i /></div>
+          <div className="archive-visual">
+            <img src={project.image} alt="" />
+            <div className="archive-image-wash" aria-hidden="true" />
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <div className="archive-image-title">
+              <small>{project.year} · {project.place}</small>
+              <strong>{project.title}</strong>
+            </div>
+          </div>
           <div className="archive-body">
             <div className="archive-meta"><span>{project.year}</span><span>{project.place}</span></div>
             <h2>{project.title}</h2>

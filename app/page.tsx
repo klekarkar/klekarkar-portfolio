@@ -140,24 +140,17 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Conceptual illustration of water moving through a landscape and subsurface">
-          <div className="visual-topbar"><span>WATER SYSTEM / 01</span><span>FIELD → MODEL → DECISION</span></div>
-          <div className="sky-layer">
-            <span className="sun" />
-            <span className="hero-cloud cloud-a" />
-            <span className="hero-cloud cloud-b" />
-            <div className="precip-lines">{Array.from({ length: 9 }).map((_, index) => <i key={index} />)}</div>
-            <span className="land-line" />
-            <span className="vegetation v-one" />
-            <span className="vegetation v-two" />
-            <span className="vegetation v-three" />
+        <div className="hero-visual river-hero" aria-label="Animated river flowing from mountains through wetlands and into the aquifer">
+          <img className="river-hero-image" src="/hero-river.webp" alt="A stylised river connecting mountains, wetlands and groundwater" />
+          <div className="visual-topbar"><span>RIVER SYSTEM / 01</span><span>FIELD → MODEL → DECISION</span></div>
+          <div className="river-flow" aria-hidden="true">
+            <i /><i /><i /><i /><i />
           </div>
-          <div className="ground-layer layer-one"><span>ROOT ZONE</span><i /><i /><i /></div>
-          <div className="ground-layer layer-two"><span>UNSATURATED ZONE</span><i /><i /></div>
-          <div className="ground-layer layer-three"><span>AQUIFER</span><b className="aquifer-flow" /></div>
-          <div className="data-card card-rain"><span>PRECIPITATION</span><strong>+11.4%</strong><small>Winter scenario</small></div>
-          <div className="data-card card-recharge"><span>RECHARGE</span><strong>↓ Summer</strong><small>Seasonal shift</small></div>
-          <div className="visual-caption"><span className="caption-dot" /> Quantifying the pathways that shape water availability</div>
+          <div className="river-orbit orbit-one" aria-hidden="true" />
+          <div className="river-orbit orbit-two" aria-hidden="true" />
+          <div className="data-card card-rain"><span>CATCHMENT</span><strong>Rain → river</strong><small>Tracking every pathway</small></div>
+          <div className="data-card card-recharge"><span>SUBSURFACE</span><strong>River ↔ aquifer</strong><small>One connected system</small></div>
+          <div className="visual-caption"><span className="caption-dot" /> Following water from landscape to decision</div>
         </div>
       </section>
 
@@ -275,7 +268,7 @@ export default function Home() {
 
       <footer>
         <a className="brand footer-brand" href="#top"><span className="brand-mark" aria-hidden="true"><i /></span><span>LK</span></a>
-        <p>Hydrology · Water resources · Climate adaptation</p>
+        <p>© 2026 Katoria Lekarkar · Hydrology · Water resources · Climate adaptation</p>
         <div><a href="mailto:katoria.lesaalon.lekarkar@vub.be">Email</a><a href="https://www.linkedin.com/in/katoria-lekarkar-504839101/">LinkedIn</a><a href="#top">Back to top ↑</a></div>
       </footer>
     </main>

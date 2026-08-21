@@ -11,6 +11,14 @@ export const metadata: Metadata = {
 export default function CvPage() {
   return <main><SiteHeader />
     <InnerHero index="04" label="Curriculum vitae" title="Research depth. Practical range." intro="A career connecting hydrological analysis with the real decisions, infrastructure and collaborations that determine water security." />
+    <section className="cv-download section-shell" aria-label="Download curriculum vitae">
+      <div>
+        <p>DOWNLOADABLE CV</p>
+        <h2>The complete record, ready to keep.</h2>
+        <span>Download the current four-page CV for a concise overview of my research, engineering experience, education and technical expertise.</span>
+      </div>
+      <a className="button button-primary" href="/Katoria_Lekarkar_CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
+    </section>
     <section className="cv-layout section-shell">
       <aside>
         <p>PROFILE</p>
@@ -35,14 +43,14 @@ export default function CvPage() {
             <div>
               <h3>PhD Researcher — Water Availability & Climate Adaptation</h3>
               <p>Vrije Universiteit Brussel · Water and Climate Research Group</p>
-              <small>Investigated how subsurface processes control drought, groundwater recharge and future water availability in Belgium.</small>
+              <small>Modelled how drought, recharge and land-surface processes shape Belgium’s present and future water availability.</small>
               <ul>
-                <li>Applied the mesoscale Hydrological Model across Belgium to simulate soil moisture, baseflow, groundwater recharge and water availability under historical and future climates.</li>
-                <li>Reconstructed root-zone soil-moisture droughts since 1970 and analysed how droughts develop, persist and recover to improve interpretation of monitoring and preparedness needs.</li>
-                <li>Quantified future groundwater-recharge changes using ten global climate models and four emissions scenarios, identifying greater dependence on winter and spring recharge alongside substantial summer and autumn losses.</li>
-                <li>Evaluated the calibration and transferability of low-cost TOMST soil-moisture sensors for environmental monitoring and field assessment of water-retention measures.</li>
-                <li>Developed SPONGE, a modular process-based model for comparing how nature-based interventions affect soil-water storage, drainage, groundwater recharge and drought resilience.</li>
-                <li>Combined hydrological outputs with machine-learning methods, Python, GIS and high-performance computing to analyse climatic and land-surface controls on water scarcity.</li>
+                <li>Applied mHM across Belgium to simulate soil moisture, baseflow, recharge and water availability under historical and future climates.</li>
+                <li>Reconstructed root-zone droughts since 1970, revealing how they emerge, persist and recover.</li>
+                <li>Quantified future recharge with ten global climate models and four emissions scenarios, exposing a stronger dependence on winter and spring recharge.</li>
+                <li>Tested low-cost soil-moisture sensors for field monitoring and evaluation of water-retention measures.</li>
+                <li>Developed SPONGE, a modular model for comparing how nature-based interventions influence storage, drainage, recharge and drought resilience.</li>
+                <li>Used Python, GIS, machine learning and high-performance computing to isolate climatic and land-surface controls on water scarcity.</li>
               </ul>
             </div>
           </div>
@@ -52,13 +60,13 @@ export default function CvPage() {
             <div>
               <h3>Project Manager — UNESCO Chair on Open Water Science and Education</h3>
               <p>Vrije Universiteit Brussel · International programme</p>
-              <small>Managed international work on open hydrological data, low-cost monitoring, open-source modelling and climate-resilient water management.</small>
+              <small>Led international work on open hydrological data, low-cost monitoring, open-source modelling and climate-resilient water management.</small>
               <ul>
-                <li>Coordinated partners, budgets, work plans, deliverables, reporting and communication for projects with a combined value exceeding €1 million.</li>
-                <li>Led the processing, documentation and publication of soil-moisture datasets collected with low-cost environmental sensors through UNESCO-IHP WINS.</li>
-                <li>Developed SWAT+ hydrological-modelling and data-analysis training materials to support Climate Risk Informed Decision Analysis.</li>
-                <li>Co-developed dashboards for communicating spatial and time-series hydrological information to technical and non-technical users.</li>
-                <li>Prepared successful funding proposals and coordinated collaboration among universities, international organisations and water-sector partners.</li>
+                <li>Directed partners, budgets, work plans and reporting for projects valued at more than €1 million.</li>
+                <li>Led publication of low-cost soil-moisture datasets through UNESCO-IHP WINS.</li>
+                <li>Created SWAT+ training materials for Climate Risk Informed Decision Analysis.</li>
+                <li>Co-developed dashboards that make spatial and time-series water data clear to technical and non-technical audiences.</li>
+                <li>Won funding and coordinated universities, international organisations and water-sector partners.</li>
               </ul>
             </div>
           </div>
@@ -68,16 +76,15 @@ export default function CvPage() {
             <div>
               <h3>Water Resources Engineer</h3>
               <p>Rural Focus Limited · Kenya</p>
-              <small>Delivered water-resource planning, feasibility, engineering design and construction assignments in drought-prone and water-scarce landscapes.</small>
+              <small>Turned water-resource assessments into buildable, costed solutions for drought-prone landscapes.</small>
               <ul>
-                <li>Developed climate-resilient water strategies, masterplans and investment plans for community conservancies, rural settlements, agriculture, livestock and wildlife.</li>
-                <li>Conducted topographic surveys and mapped water sources, pipeline routes and reservoir sites using field survey equipment, GNSS and spatial data.</li>
-                <li>Performed hydrological time-series analysis for river abstraction and dam feasibility, and modelled rural distribution networks to identify pressure losses, deficiencies and opportunities for optimisation.</li>
-                <li>Assessed surface water, groundwater, floodwater and rainwater-harvesting options through technical, cost-benefit and socio-environmental feasibility studies.</li>
-                <li>Designed and costed gravity-fed supplies, solar pumping stations, pipe networks, storage reservoirs and rainwater-harvesting systems; prepared drawings, specifications, bills of quantities and contract documents.</li>
-                <li>Conducted water-quality sampling, investigated pollution sources and developed mitigation measures for domestic, agricultural and wildlife supplies.</li>
-                <li>Led participatory water-resource mapping and translated regional climate information and local knowledge into adaptation priorities and infrastructure plans.</li>
-                <li>Supervised construction to ensure compliance with designs, budgets, schedules, environmental requirements and health-and-safety standards.</li>
+                <li>Produced climate-resilient water strategies, masterplans and investment plans for communities, agriculture, livestock and wildlife.</li>
+                <li>Surveyed and mapped water sources, pipelines and reservoir sites using GNSS, field equipment and spatial data.</li>
+                <li>Analysed river flows, dam feasibility and rural distribution networks to identify risks and optimise supply.</li>
+                <li>Assessed surface water, groundwater, floodwater and rainwater harvesting through technical, economic and socio-environmental studies.</li>
+                <li>Designed and costed gravity systems, solar pumping, pipe networks, storage and rainwater-harvesting infrastructure.</li>
+                <li>Led participatory mapping and translated climate evidence and local knowledge into adaptation priorities.</li>
+                <li>Supervised construction against designs, budgets, schedules, environmental requirements and safety standards.</li>
               </ul>
             </div>
           </div>
