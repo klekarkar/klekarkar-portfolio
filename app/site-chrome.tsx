@@ -26,9 +26,8 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer>
-      <a className="brand footer-brand" href="/" aria-label="Back to homepage"><BrandIdentity /></a>
-      <p>© 2026 Katoria Lekarkar · Hydrology · Water resources · Climate adaptation</p>
-      <div><a href="mailto:katoria.lesaalon.lekarkar@vub.be">Email</a><a href="https://www.linkedin.com/in/katoria-lekarkar-504839101/">LinkedIn</a><a href="/">Home ↑</a></div>
+      <p>© 2026 Katoria Lekarkar</p>
+      <a href="#top">Back to top ↑</a>
     </footer>
   );
 }
