@@ -1,4 +1,15 @@
-const projects = [
+type SelectedWork = {
+  number: string;
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  detail: string;
+  tags: string[];
+  visual?: "sponge" | "recharge";
+  image?: string;
+};
+
+const projects: SelectedWork[] = [
   {
     number: "01",
     eyebrow: "Climate adaptation · Model development",
@@ -6,7 +17,7 @@ const projects = [
     subtitle:
       "A process-oriented model that turns the ‘sponge effect’ of soils and nature-based solutions into measurable water benefits.",
     detail:
-      "Applied in Boechout, Belgium, to trace interception, infiltration, soil-water storage, runoff and groundwater recharge.",
+      "At Boechout, SPONGE traces how rainfall becomes interception, storage, runoff, drainage and recharge—before and after an intervention.",
     tags: ["Nature-based solutions", "Python", "Decision support"],
     visual: "sponge",
   },
@@ -17,20 +28,42 @@ const projects = [
     subtitle:
       "How a wetter climate can still leave less water available when recharge shifts away from summer and autumn.",
     detail:
-      "Ten global climate models and four emission pathways reveal an increasingly seasonal recharge regime across Belgium.",
+      "Across ten climate models and four emissions pathways, recharge shifts decisively toward winter as summer and autumn losses deepen.",
     tags: ["mHM", "ISIMIP", "Climate scenarios"],
     visual: "recharge",
   },
   {
     number: "03",
-    eyebrow: "Published research · HESS",
-    title: "Soil moisture droughts",
+    eyebrow: "Kenya · Water masterplanning",
+    title: "Ol Pejeta Conservancy",
     subtitle:
-      "A national reconstruction showing that 2011–2020 was Belgium’s driest decade since 1970.",
+      "A 20-year water masterplan for an integrated conservancy supporting staff, tourism, cattle and wildlife.",
     detail:
-      "The analysis connects meteorological drought with slower subsurface recovery—and the water stress people and ecosystems actually experience.",
-    tags: ["Drought", "Spatial analysis", "Hydrological modelling"],
-    visual: "drought",
+      "The plan prioritised abstraction, storage, distribution, wastewater reuse and investment across normal, dry and exceptional conditions.",
+    tags: ["Masterplanning", "Water security", "Rural Focus"],
+    image: "/projects/ol-pejeta-masterplan.webp",
+  },
+  {
+    number: "04",
+    eyebrow: "Kenya · Rainwater harvesting",
+    title: "Meibae rock catchment",
+    subtitle:
+      "A rock-catchment reservoir and solar-pumped supply designed for a remote rangers’ camp.",
+    detail:
+      "Feasibility, engineering design and construction supervision delivered 150,000 litres of storage and a more reliable permanent supply.",
+    tags: ["Rainwater harvesting", "Engineering design", "Rural Focus"],
+    image: "/projects/meibae-rock-catchment.webp",
+  },
+  {
+    number: "05",
+    eyebrow: "Kenya · Spring protection",
+    title: "Loiragai Spring",
+    subtitle:
+      "Rehabilitation design for a gravity-fed spring system serving people, livestock and wildlife.",
+    detail:
+      "The assessment restored the system around environmental-flow requirements, stronger crossings and more reliable consumer points.",
+    tags: ["Water supply", "Rehabilitation", "Rural Focus"],
+    image: "/projects/loiragai-spring.webp",
   },
 ];
 
@@ -56,7 +89,15 @@ function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
 
-function ProjectVisual({ type }: { type: string }) {
+function ProjectVisual({ type, image }: { type?: SelectedWork["visual"]; image?: string }) {
+  if (image) {
+    return (
+      <div className="project-art project-image-art" aria-hidden="true">
+        <img src={image} alt="" />
+      </div>
+    );
+  }
+
   if (type === "sponge") {
     return (
       <div className="project-art project-image-art" aria-hidden="true">
@@ -83,16 +124,7 @@ function ProjectVisual({ type }: { type: string }) {
     );
   }
 
-  return (
-    <div className="project-art drought-art" aria-hidden="true">
-      <div className="drought-grid">
-        {Array.from({ length: 50 }).map((_, index) => (
-          <i key={index} className={index > 38 || [6, 17, 23, 31].includes(index) ? "dry" : ""} />
-        ))}
-      </div>
-      <div className="drought-note"><strong>37</strong><span>drought months<br />in one decade</span></div>
-    </div>
-  );
+  return null;
 }
 
 export default function Home() {
@@ -154,12 +186,12 @@ export default function Home() {
         <div className="section-heading">
           <div className="section-label light"><span>02</span> SELECTED WORK</div>
           <h2>From national climate questions to site-level solutions.</h2>
-          <p>Selected research and model-development work on the processes that control water availability.</p>
+          <p>Research and field engineering that connect climate-scale change with practical water security.</p>
         </div>
         <div className="project-list">
           {projects.map((project) => (
             <article className="project-card" key={project.title}>
-              <ProjectVisual type={project.visual} />
+              <ProjectVisual type={project.visual} image={project.image} />
               <div className="project-content">
                 <div className="project-number">{project.number}</div>
                 <p className="project-eyebrow">{project.eyebrow}</p>
@@ -173,22 +205,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="evidence section-shell">
-        <div className="evidence-intro">
-          <div className="section-label"><span>03</span> RESEARCH IN NUMBERS</div>
-          <h2>Evidence that tells a water story.</h2>
-        </div>
-        <div className="metrics">
-          <div><strong>37</strong><span>drought months in Belgium during 2011–2020</span></div>
-          <div><strong>10</strong><span>global climate models evaluated for future recharge</span></div>
-          <div><strong>4</strong><span>emission pathways, from low to very high warming</span></div>
-          <div><strong>2</strong><span>scales connected: national patterns and local action</span></div>
-        </div>
-      </section>
-
       <section className="expertise section-shell" id="expertise">
         <div className="section-heading dark-text">
-          <div className="section-label"><span>04</span> EXPERTISE</div>
+          <div className="section-label"><span>03</span> EXPERTISE</div>
           <h2>A rigorous route from question to action.</h2>
         </div>
         <div className="capability-grid">
@@ -208,27 +227,6 @@ export default function Home() {
           <div>
             <p className="toolbox-label">TOOLS</p>
             <p>Python · GIS · mHM · SWAT+ · Google Earth Engine · HPC · Remote sensing · Data visualisation</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="experience section-shell">
-        <div className="section-label"><span>05</span> EXPERIENCE</div>
-        <div className="experience-grid">
-          <div>
-            <p>2020 — 2026</p>
-            <h3>Doctoral researcher</h3>
-            <span>Vrije Universiteit Brussel · Belgium</span>
-          </div>
-          <div>
-            <p>2017 — 2020</p>
-            <h3>Water resources engineer</h3>
-            <span>Rural Focus Ltd · Kenya</span>
-          </div>
-          <div>
-            <p>Selected projects</p>
-            <h3>Belgium · Kenya · Ethiopia · DRC · Cabo Verde · Spain</h3>
-            <span>Research, catchment assessment and water planning</span>
           </div>
         </div>
       </section>

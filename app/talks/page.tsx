@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 // To add a talk, copy one object, keep the same field names and edit its content.
 const talks = [
   {
+    year: "24 JUN 2026",
+    place: "Etterbeek · VUB",
+    title: "IoT Monitoring for Nature-based Solutions",
+    event: "NbSWISE Training Workshop 2026",
+    narrative: [
+      "I presented progress on SPONGE: a process-based representation of water retention through nature-based solutions.",
+      "The session showed how the model translates different NbS interventions into changes in interception, infiltration, soil-water storage, drainage, runoff and groundwater recharge—connecting field monitoring with a clearer account of how each intervention works.",
+    ],
+  },
+  {
     year: "2025",
     place: "UNESCO Headquarters · Paris",
     title: "Strengthening open hydrology and citizen science",
