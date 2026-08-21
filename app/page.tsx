@@ -186,7 +186,7 @@ export default function Home() {
       <section className="work section-shell" id="work">
         <div className="section-heading">
           <div className="section-label light"><span>02</span> SELECTED WORK</div>
-          <h2>From national climate questions to site-level solutions.</h2>
+          <h2>From national climate questions to local solutions.</h2>
           <p>Research and field engineering that connect climate-scale change with practical water security.</p>
         </div>
         <div className="project-list">
