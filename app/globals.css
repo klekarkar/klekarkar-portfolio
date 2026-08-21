@@ -125,6 +125,10 @@ h1 em, h2 em { color: var(--water); font-family: Georgia, "Times New Roman", ser
 
 .live-hydrology { background:var(--navy); isolation:isolate; }
 .live-hydrology::after { background:linear-gradient(180deg,rgba(7,29,50,.1),transparent 43%,rgba(7,29,50,.38)); content:""; inset:0; pointer-events:none; position:absolute; z-index:2; }
+.catchment-overview,.hydrology-process-layer{inset:0;overflow:hidden;position:absolute}
+.catchment-overview{animation:catchmentOverviewCycle 24s ease-in-out infinite;z-index:0}
+.catchment-overview-image{animation:catchmentZoom 24s cubic-bezier(.22,.61,.36,1) infinite;height:100%;inset:0;object-fit:cover;position:absolute;transform-origin:64% 60%;width:100%}
+.hydrology-process-layer{animation:hydrologyProcessCycle 24s ease-in-out infinite;opacity:0;z-index:1}
 .live-hydrology .river-hero-image { animation:heroRiverDrift 22s ease-in-out infinite alternate; }
 .live-flow { inset:0; overflow:hidden; pointer-events:none; position:absolute; z-index:3; }
 .live-flow i { animation:liveWater 5.4s linear infinite; background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),rgba(120,212,210,.74),transparent); border-radius:999px; filter:blur(.4px); height:2px; left:-24%; opacity:0; position:absolute; transform:rotate(-8deg); width:38%; }
@@ -136,6 +140,9 @@ h1 em, h2 em { color: var(--water); font-family: Georgia, "Times New Roman", ser
 .reading-rain{left:11%;top:17%}.reading-climate{right:9%;top:12%;animation-delay:-1.2s}.reading-flow{left:47%;top:53%;animation-delay:-2.1s}.reading-soil{bottom:16%;left:12%;animation-delay:-.8s}.reading-recharge{bottom:9%;right:10%;animation-delay:-1.7s}
 @keyframes liveWater { 0%{opacity:0;transform:translateX(0) rotate(-8deg)}20%{opacity:.75}78%{opacity:.55}100%{opacity:0;transform:translateX(330%) rotate(-8deg)} }
 @keyframes readingPulse { 0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)} }
+@keyframes catchmentOverviewCycle{0%,30%{opacity:1}44%,90%{opacity:0}100%{opacity:1}}
+@keyframes hydrologyProcessCycle{0%,30%{opacity:0}44%,90%{opacity:1}100%{opacity:0}}
+@keyframes catchmentZoom{0%{transform:scale(1.015)}38%{transform:scale(1.78)}100%{transform:scale(1.78)}}
 
 .credential-strip { background: var(--navy); color: white; display: grid; grid-template-columns: repeat(3, 1fr); padding: 0 clamp(26px, 6vw, 90px); }
 .credential-strip > div { border-right: 1px solid rgba(255,255,255,.13); display: flex; flex-direction: column; min-height: 158px; padding: 36px clamp(20px, 3vw, 48px); }
@@ -201,4 +208,4 @@ footer { align-items:center;background:var(--navy);color:white;display:grid;font
 @media (max-width: 680px) { .brand-wordmark{display:none}.toolbox{gap:0;padding:0}.toolbox>div{padding:28px 25px}.toolbox>div+div{border-left:0;border-top:1px solid var(--line)}.hero-meta span+span::before{display:none} }
 @media (max-width: 980px) { .capability-grid{grid-template-columns:1fr}.capability-grid article,.capability-grid article:first-child{min-height:420px} }
 @media (max-width: 680px) { .capability-grid article,.capability-grid article:first-child{border-bottom:0;min-height:390px;padding:0}.capability-grid .capability-copy h3{margin:0 0 14px}.capability-copy{padding:30px 26px} }
-@media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto}.button,.archive-visual>img{transition:none}.river-hero-image,.river-flow i,.river-orbit,.live-flow i,.process-reading,.archive-visual::after,.narrative-content{animation:none!important} }
+@media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto}.button,.archive-visual>img{transition:none}.river-hero-image,.river-flow i,.river-orbit,.live-flow i,.process-reading,.archive-visual::after,.narrative-content,.catchment-overview,.catchment-overview-image,.hydrology-process-layer{animation:none!important}.catchment-overview{display:none}.hydrology-process-layer{opacity:1} }

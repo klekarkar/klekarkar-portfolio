@@ -83,13 +83,13 @@ const capabilities = [
     index: "02",
     title: "Build the evidence",
     body: "I combine hydrological models, geospatial data and field observations to test scenarios and quantify uncertainty—not just produce attractive maps.",
-    image: "/work/build-the-evidence.webp",
+    image: "/work/build-the-evidence-v2.webp",
   },
   {
     index: "03",
     title: "Shape the response",
     body: "I turn results into practical choices for drought resilience, water retention and nature-based adaptation that project teams and decision-makers can use.",
-    image: "/work/shape-the-response.webp",
+    image: "/work/shape-the-response-v2.webp",
   },
 ];
 

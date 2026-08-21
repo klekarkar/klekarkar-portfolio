@@ -19,12 +19,17 @@ export default function HydrologyLive() {
   }, []);
 
   return (
-    <div className="hero-visual live-hydrology" aria-label="A living catchment scene with changing hydrological model readings">
-      <img className="river-hero-image" src="/hero-live-hydrology.webp" alt="A river flowing through a wooded wetland under changing weather" />
-      <div className="live-flow" aria-hidden="true"><i /><i /><i /><i /></div>
-      <div className="model-mesh" aria-hidden="true" />
-      <div className="live-readings" aria-hidden="true">
-        {readings.map((reading) => <span className={`process-reading ${reading.className}`} key={reading.className}>{reading.value(tick)}</span>)}
+    <div className="hero-visual live-hydrology catchment-journey" aria-label="An animated journey from a complete river catchment into a live hydrological system with changing model readings">
+      <div className="catchment-overview" aria-hidden="true">
+        <img className="catchment-overview-image" src="/hero-catchment-overview.webp" alt="" />
+      </div>
+      <div className="hydrology-process-layer">
+        <img className="river-hero-image" src="/hero-live-hydrology.webp" alt="" />
+        <div className="live-flow" aria-hidden="true"><i /><i /><i /><i /></div>
+        <div className="model-mesh" aria-hidden="true" />
+        <div className="live-readings" aria-hidden="true">
+          {readings.map((reading) => <span className={`process-reading ${reading.className}`} key={reading.className}>{reading.value(tick)}</span>)}
+        </div>
       </div>
     </div>
   );
