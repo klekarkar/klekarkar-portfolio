@@ -170,7 +170,7 @@ export default function Home() {
       <section className="credential-strip" aria-label="Professional profile">
         <div><small>BACKGROUND</small><strong>PhD · Engineering Sciences</strong><span>Vrije Universiteit Brussel</span></div>
         <div><small>FOCUS</small><strong>Water availability</strong><span>Drought · recharge · adaptation</span></div>
-        <div><small>APPROACH</small><strong>Science into practice</strong><span>Models · maps · decisions</span></div>
+        <div><small>APPROACH</small><strong>Science into practice</strong><span>Science · decisions · solutions</span></div>
       </section>
 
       <section className="about section-shell" id="about">

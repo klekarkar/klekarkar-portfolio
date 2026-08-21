@@ -14,7 +14,7 @@ const projects = [
     year: "2023–2026",
     place: "Boechout, Belgium",
     title: "Water retention potential of a nature conservation area",
-    image: "/projects/boechout-water-retention.webp",
+    image: "/work/sponge-nature-based-solutions.webp",
     copy: "Combining soil-moisture observations, groundwater data and a mechanistic model to evaluate how restored landscapes retain water.",
     narrative: [
       "This research evaluates the water-retention potential of a restored nature conservation area managed by Natuurpunt in Boechout, Belgium.",
