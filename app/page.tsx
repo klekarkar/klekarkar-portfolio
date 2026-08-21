@@ -59,19 +59,8 @@ function Arrow() {
 function ProjectVisual({ type }: { type: string }) {
   if (type === "sponge") {
     return (
-      <div className="project-art sponge-art" aria-hidden="true">
-        <span className="cloud cloud-one" />
-        <span className="cloud cloud-two" />
-        <span className="rain rain-one" />
-        <span className="rain rain-two" />
-        <span className="rain rain-three" />
-        <span className="tree tree-one" />
-        <span className="tree tree-two" />
-        <span className="soil soil-top" />
-        <span className="soil soil-mid" />
-        <span className="soil soil-deep" />
-        <span className="water-path path-one" />
-        <span className="water-path path-two" />
+      <div className="project-art project-image-art" aria-hidden="true">
+        <img src="/work/sponge-nature-based-solutions.webp" alt="" />
       </div>
     );
   }
@@ -140,18 +129,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-visual river-hero" aria-label="Animated river flowing from mountains through wetlands and into the aquifer">
-          <img className="river-hero-image" src="/hero-river.webp" alt="A stylised river connecting mountains, wetlands and groundwater" />
-          <div className="visual-topbar"><span>RIVER SYSTEM / 01</span><span>FIELD → MODEL → DECISION</span></div>
-          <div className="river-flow" aria-hidden="true">
-            <i /><i /><i /><i /><i />
-          </div>
-          <div className="river-orbit orbit-one" aria-hidden="true" />
-          <div className="river-orbit orbit-two" aria-hidden="true" />
-          <div className="data-card card-rain"><span>CATCHMENT</span><strong>Rain → river</strong><small>Tracking every pathway</small></div>
-          <div className="data-card card-recharge"><span>SUBSURFACE</span><strong>River ↔ aquifer</strong><small>One connected system</small></div>
-          <div className="visual-caption"><span className="caption-dot" /> Following water from landscape to decision</div>
-        </div>
+        <HydrologyLive />
       </section>
 
       <section className="credential-strip" aria-label="Professional profile">
@@ -274,3 +252,4 @@ export default function Home() {
     </main>
   );
 }
+import HydrologyLive from "./hydrology-live";
