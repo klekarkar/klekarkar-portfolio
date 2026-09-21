@@ -14,6 +14,7 @@ const projects = [
     year: "2023–2026",
     place: "Boechout, Belgium",
     title: "Water retention potential of a nature conservation area",
+    theme: "feasibility",
     image: "/work/sponge-nature-based-solutions.webp",
     copy: "Combining soil-moisture observations, groundwater data and a mechanistic model to evaluate how restored landscapes retain water.",
     narrative: [
@@ -28,6 +29,7 @@ const projects = [
     year: "2023–2026",
     place: "Brussels · International",
     title: "UNESCO Chair on Open Water Science and Education",
+    theme: "management",
     image: "/projects/open-water-science.webp",
     copy: "Using low-cost sensors, digital devices, open data platforms and modelling tools to make hydrology more accessible and reproducible.",
     narrative: [
@@ -47,6 +49,7 @@ const projects = [
     year: "2020",
     place: "Laikipia, Kenya",
     title: "Loiragai Spring Water Supply",
+    theme: "infrastructure",
     image: "/projects/loiragai-spring.webp",
     copy: "Technical assessment and rehabilitation design for a gravity-fed spring system serving domestic users, livestock and wildlife.",
     narrative: [
@@ -66,6 +69,7 @@ const projects = [
     year: "2019",
     place: "Laikipia & Samburu, Kenya",
     title: "Community conservancy water management plans",
+    theme: "planning",
     image: "/projects/conservancy-planning.webp",
     copy: "Five-year strategies to improve water accessibility and reliability for communities, livestock, agriculture and wildlife.",
     narrative: [
@@ -79,6 +83,7 @@ const projects = [
     year: "2018–2019",
     place: "Laikipia, Kenya",
     title: "Ol Pejeta Conservancy water masterplan",
+    theme: "planning",
     image: "/projects/ol-pejeta-masterplan.webp",
     copy: "A 20-year water plan for an integrated landscape supporting staff, tourism facilities, cattle and wildlife.",
     narrative: [
@@ -99,6 +104,7 @@ const projects = [
     year: "2017–2019",
     place: "Northern Kenya",
     title: "Climate-resilient water services for conservancies",
+    theme: "management",
     image: "/projects/climate-resilient-services.webp",
     copy: "Water-resource mapping, future climate assessment and infrastructure delivery in water-stressed community conservancies.",
     narrative: [
@@ -112,6 +118,7 @@ const projects = [
     year: "2018–2019",
     place: "Samburu, Kenya",
     title: "Meibae rock-catchment water supply",
+    theme: "infrastructure",
     image: "/projects/meibae-rock-catchment.webp",
     copy: "Feasibility, design and construction supervision for a 150,000-litre rainwater storage system and solar pumping scheme.",
     narrative: [
@@ -131,6 +138,7 @@ const projects = [
     year: "2017",
     place: "Turkana, Kenya",
     title: "FAO dryland agriculture and water harvesting",
+    theme: "feasibility",
     image: "/projects/kalobeyei-drylands.webp",
     copy: "Using half-moon bunds and water pans to capture scarce rainfall and support crop production in a dry landscape.",
     narrative: [
@@ -146,6 +154,7 @@ const projects = [
     year: "2017–2018",
     place: "Kenya",
     title: "UNICEF WASH design manual",
+    theme: "infrastructure",
     image: "/projects/unicef-wash.webp",
     copy: "Revision of drawings, bills of quantities and cost estimates for school sanitation and water-storage facilities.",
     narrative: [
@@ -158,6 +167,7 @@ const projects = [
     year: "2017",
     place: "Tana River, Kenya",
     title: "Ishaqbin community water supply",
+    theme: "infrastructure",
     image: "/projects/ishaqbin-water-supply.webp",
     copy: "Topographic survey and distribution-system design for community, livestock and wildlife water needs.",
     narrative: [
@@ -169,37 +179,107 @@ const projects = [
   },
 ];
 
+const themes = [
+  {
+    id: "management",
+    index: "01",
+    title: "Project management",
+    short: "Leading multidisciplinary water work from coordination to delivery.",
+    description: "Projects where my role centred on coordinating people, technical workstreams, data, partners and delivery across the project cycle.",
+  },
+  {
+    id: "feasibility",
+    index: "02",
+    title: "Feasibility studies",
+    short: "Testing what is technically practical before investment.",
+    description: "Assessments that combine field evidence, hydrology and option analysis to determine which interventions are viable and where they can work.",
+  },
+  {
+    id: "planning",
+    index: "03",
+    title: "Water resource management & investment planning",
+    short: "Turning water evidence into priorities, strategies and investment pathways.",
+    description: "Work that connects water availability, demand, climate risk and system performance with long-term management and investment decisions.",
+  },
+  {
+    id: "infrastructure",
+    index: "04",
+    title: "Water infrastructure design & development",
+    short: "Translating water needs into buildable, resilient systems.",
+    description: "Engineering projects covering surveys, rehabilitation, design, costing, tender support, construction supervision and practical water-supply development.",
+  },
+];
+
 export default function ProjectsPage() {
   return <main><SiteHeader />
-    <InnerHero index="01" label="Project experience" title="Water work grounded in place." intro="From strategic water planning to engineering design, I have worked across the full project cycle: diagnosing the problem, assessing options, shaping the investment and supporting delivery." />
+    <InnerHero
+      index="01"
+      label="Project experience"
+      title="Water projects from evidence to implementation."
+      intro="My work spans the full development pathway of water projects: managing multidisciplinary assignments, testing feasibility, shaping resource and investment plans, and designing infrastructure for implementation."
+    />
     <section className="project-archive section-shell">
-      <div className="archive-summary"><span>10 selected projects</span><span>Europe + Africa</span><span>Strategy → implementation</span></div>
-      <div className="archive-grid">
-        {projects.map((project, index) => <article className={`archive-card ${project.tone}`} key={project.title}>
-          <div className="archive-visual">
-            <img src={project.image} alt="" />
-            <div className="archive-image-wash" aria-hidden="true" />
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <div className="archive-image-title">
-              <small>{project.year} · {project.place}</small>
-              <strong>{project.title}</strong>
+      <div className="archive-summary"><span>10 selected projects</span><span>Europe + Africa</span><span>Feasibility → planning → delivery</span></div>
+
+      <nav className="theme-index" aria-label="Project themes">
+        {themes.map((theme) => {
+          const count = projects.filter((project) => project.theme === theme.id).length;
+          return <a href={`#${theme.id}`} className="theme-index-card" key={theme.id}>
+            <span className="theme-index-number">{theme.index}</span>
+            <div>
+              <strong>{theme.title}</strong>
+              <p>{theme.short}</p>
             </div>
-            {project.credit && <span className="archive-image-credit">{project.credit}</span>}
-          </div>
-          <div className="archive-body">
-            <div className="archive-meta"><span>{project.year}</span><span>{project.place}</span></div>
-            <h2>{project.title}</h2>
-            <p>{project.copy}</p>
-            <details className="narrative-disclosure">
-              <summary><span>Read project narrative</span><span className="disclosure-icon" aria-hidden="true">+</span></summary>
-              <div className="narrative-content">
-                {project.narrative.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-                {project.highlights && <><h3>Selected outcomes</h3><ul>{project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul></>}
+            <span className="theme-index-count">{count} {count === 1 ? "project" : "projects"}</span>
+          </a>;
+        })}
+      </nav>
+
+      <div className="project-themes">
+        {themes.map((theme) => {
+          const themeProjects = projects.filter((project) => project.theme === theme.id);
+          return <section className="project-theme" id={theme.id} key={theme.id}>
+            <header className="project-theme-header">
+              <span className="project-theme-number">{theme.index}</span>
+              <div>
+                <p>Area of work</p>
+                <h2>{theme.title}</h2>
               </div>
-            </details>
-            <div className="tags light-tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
-          </div>
-        </article>)}
+              <p className="project-theme-description">{theme.description}</p>
+            </header>
+
+            <div className="archive-grid">
+              {themeProjects.map((project) => {
+                const projectIndex = projects.findIndex((item) => item.title === project.title) + 1;
+                return <article className={`archive-card ${project.tone}`} key={project.title}>
+                  <div className="archive-visual">
+                    <img src={project.image} alt="" />
+                    <div className="archive-image-wash" aria-hidden="true" />
+                    <span>{String(projectIndex).padStart(2, "0")}</span>
+                    <div className="archive-image-title">
+                      <small>{project.year} · {project.place}</small>
+                      <strong>{project.title}</strong>
+                    </div>
+                    {project.credit && <span className="archive-image-credit">{project.credit}</span>}
+                  </div>
+                  <div className="archive-body">
+                    <div className="archive-meta"><span>{project.year}</span><span>{project.place}</span></div>
+                    <h2>{project.title}</h2>
+                    <p>{project.copy}</p>
+                    <details className="narrative-disclosure">
+                      <summary><span>Read project narrative</span><span className="disclosure-icon" aria-hidden="true">+</span></summary>
+                      <div className="narrative-content">
+                        {project.narrative.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                        {project.highlights && <><h3>Selected outcomes</h3><ul>{project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul></>}
+                      </div>
+                    </details>
+                    <div className="tags light-tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
+                  </div>
+                </article>;
+              })}
+            </div>
+          </section>;
+        })}
       </div>
     </section>
     <section className="page-cta"><p>Have a water challenge that needs a clear plan?</p><a className="button contact-button" href="mailto:katoria.lesaalon.lekarkar@vub.be">Discuss a project <ArrowIcon /></a></section>
