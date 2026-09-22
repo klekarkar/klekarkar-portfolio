@@ -250,30 +250,23 @@ export default function ProjectsPage() {
 
             <div className="archive-grid">
               {themeProjects.map((project) => {
-                const projectIndex = projects.findIndex((item) => item.title === project.title) + 1;
                 return <article className={`archive-card ${project.tone}`} key={project.title}>
                   <div className="archive-visual">
                     <img src={project.image} alt="" />
-                    <div className="archive-image-wash" aria-hidden="true" />
-                    <span>{String(projectIndex).padStart(2, "0")}</span>
-                    <div className="archive-image-title">
-                      <small>{project.year} · {project.place}</small>
-                      <strong>{project.title}</strong>
-                    </div>
                     {project.credit && <span className="archive-image-credit">{project.credit}</span>}
                   </div>
                   <div className="archive-body">
                     <div className="archive-meta"><span>{project.year}</span><span>{project.place}</span></div>
                     <h2>{project.title}</h2>
                     <p>{project.copy}</p>
+                    <div className="tags light-tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
                     <details className="narrative-disclosure">
-                      <summary><span>Read project narrative</span><span className="disclosure-icon" aria-hidden="true">+</span></summary>
+                      <summary><span>Read more</span><span className="read-more-icon" aria-hidden="true"><ArrowIcon /></span></summary>
                       <div className="narrative-content">
                         {project.narrative.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                         {project.highlights && <><h3>Selected outcomes</h3><ul>{project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul></>}
                       </div>
                     </details>
-                    <div className="tags light-tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
                   </div>
                 </article>;
               })}
