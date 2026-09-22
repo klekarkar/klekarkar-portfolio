@@ -211,7 +211,7 @@ const themes = [
 ];
 
 export default function ProjectsPage() {
-  return <main><SiteHeader />
+  return <main><SiteHeader active="projects" />
     <InnerHero
       index="01"
       label="Project experience"
@@ -224,7 +224,7 @@ export default function ProjectsPage() {
       <nav className="theme-index" aria-label="Project themes">
         {themes.map((theme) => {
           const count = projects.filter((project) => project.theme === theme.id).length;
-          return <a href={`#${theme.id}`} className="theme-index-card" key={theme.id}>
+          return <a href={`#${theme.id}`} className="theme-index-card" data-theme={theme.id} key={theme.id}>
             <span className="theme-index-number">{theme.index}</span>
             <div>
               <strong>{theme.title}</strong>
@@ -238,7 +238,7 @@ export default function ProjectsPage() {
       <div className="project-themes">
         {themes.map((theme) => {
           const themeProjects = projects.filter((project) => project.theme === theme.id);
-          return <section className="project-theme" id={theme.id} key={theme.id}>
+          return <section className="project-theme" data-theme={theme.id} id={theme.id} key={theme.id}>
             <header className="project-theme-header">
               <span className="project-theme-number">{theme.index}</span>
               <div>

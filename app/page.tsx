@@ -1,5 +1,5 @@
 import HydrologyLive from "./hydrology-live";
-import { ArrowIcon, BrandIdentity } from "./site-chrome";
+import { ArrowIcon, SiteHeader } from "./site-chrome";
 
 type SelectedWork = {
   number: string;
@@ -135,18 +135,7 @@ function ProjectVisual({ type, image, credit }: { type?: SelectedWork["visual"];
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Katoria Lekarkar, home">
-          <BrandIdentity />
-        </a>
-        <nav aria-label="Primary navigation">
-          <a href="/projects">Projects</a>
-          <a href="/research">Research</a>
-          <a href="/talks">Talks</a>
-          <a href="/cv">CV</a>
-          <a className="nav-contact" href="#contact">Let’s talk <ArrowIcon /></a>
-        </nav>
-      </header>
+      <SiteHeader home />
 
       <section className="hero" id="top">
         <div className="hero-copy">

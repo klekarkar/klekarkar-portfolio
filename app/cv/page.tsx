@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function CvPage() {
-  return <main><SiteHeader />
+  return <main><SiteHeader active="cv" />
     <InnerHero index="04" label="Curriculum vitae" title="Research depth. Practical range." intro="A career connecting hydrological analysis with the real decisions, infrastructure and collaborations that determine water security." />
     <section className="cv-download section-shell" aria-label="Download curriculum vitae">
       <div>

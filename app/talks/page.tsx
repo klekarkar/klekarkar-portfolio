@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { InnerHero, SiteFooter, SiteHeader } from "../site-chrome";
+import { ArrowIcon, InnerHero, SiteFooter, SiteHeader } from "../site-chrome";
 
 export const metadata: Metadata = {
   title: "Talks | Katoria Lekarkar",
@@ -86,7 +86,7 @@ const talks = [
 ];
 
 export default function TalksPage() {
-  return <main><SiteHeader />
+  return <main><SiteHeader active="talks" />
     <InnerHero index="03" label="Talks & teaching" title="Hydrology, shared clearly." intro="I present research to scientific, professional and public audiences, and teach practical hydrological modelling to the next generation of water professionals." />
     <section className="talks-grid section-shell">
       {talks.map((talk, index) => <article key={talk.title}>
@@ -95,7 +95,7 @@ export default function TalksPage() {
         <h2>{talk.title}</h2>
         <span className="talk-event">{talk.event}</span>
         <details className="narrative-disclosure talk-disclosure">
-          <summary><span>Read talk narrative</span><span className="disclosure-icon" aria-hidden="true">+</span></summary>
+          <summary><span>Read narrative</span><span className="read-more-icon" aria-hidden="true"><ArrowIcon /></span></summary>
           <div className="narrative-content">{talk.narrative.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
         </details>
       </article>)}

@@ -16,10 +16,10 @@ const studies = [
 ];
 
 export default function ResearchPage() {
-  return <main><SiteHeader />
+  return <main><SiteHeader active="research" />
     <InnerHero index="02" label="Research" title="Following water below the surface." intro="My research asks how soils and groundwater control water availability, how climate change is altering those controls, and how better evidence can improve adaptation." />
     <section className="research-list section-shell">
-      {studies.map((study, index) => <article key={study.title}><div className="research-count">{String(index + 1).padStart(2, "0")}</div><div><p className="research-status">{study.status}</p><h2>{study.title}</h2><p>{study.copy}</p><a className="text-link" href={study.url}>View source <ArrowIcon /></a></div></article>)}
+      {studies.map((study, index) => <article key={study.title}><div className="research-count">{String(index + 1).padStart(2, "0")}</div><div><p className="research-status">{study.status}</p><h2>{study.title}</h2><p>{study.copy}</p><a className="card-link" href={study.url}>View source <span className="card-link-icon"><ArrowIcon /></span></a></div></article>)}
     </section>
     <section className="thesis-band"><div><p>DOCTORAL THESIS</p><h2>Dynamics of subsurface water in a changing climate</h2></div><p>An assessment of subsurface controls on water availability and climate adaptation in Belgium.</p></section>
     <section className="page-cta"><p>Explore the full publication record.</p><a className="button contact-button" href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en">Google Scholar <ArrowIcon /></a></section>

@@ -6,18 +6,33 @@ export function ArrowIcon() {
   return <svg className="arrow-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" /></svg>;
 }
 
-export function SiteHeader() {
+type NavigationSection = "projects" | "research" | "talks" | "cv";
+
+const navigation: { href: string; label: string; section: NavigationSection }[] = [
+  { href: "/projects", label: "Projects", section: "projects" },
+  { href: "/research", label: "Research", section: "research" },
+  { href: "/talks", label: "Talks", section: "talks" },
+  { href: "/cv", label: "CV", section: "cv" },
+];
+
+export function SiteHeader({ active, home = false }: { active?: NavigationSection; home?: boolean }) {
   return (
     <header className="site-header">
-      <a className="brand" href="/" aria-label="Katoria Lekarkar, home">
+      <a className="brand" href={home ? "#top" : "/"} aria-label="Katoria Lekarkar, home">
         <BrandIdentity />
       </a>
       <nav aria-label="Primary navigation">
-        <a href="/projects">Projects</a>
-        <a href="/research">Research</a>
-        <a href="/talks">Talks</a>
-        <a href="/cv">CV</a>
-        <a className="nav-contact" href="mailto:katoria.lesaalon.lekarkar@vub.be">Let’s talk <ArrowIcon /></a>
+        {navigation.map((item) => (
+          <a
+            className="nav-link"
+            href={item.href}
+            aria-current={active === item.section ? "page" : undefined}
+            key={item.section}
+          >
+            {item.label}
+          </a>
+        ))}
+        <a className="nav-contact" href={home ? "#contact" : "mailto:katoria.lesaalon.lekarkar@vub.be"}>Let’s talk <ArrowIcon /></a>
       </nav>
     </header>
   );
