@@ -184,28 +184,24 @@ const themes = [
     id: "management",
     index: "01",
     title: "Project management",
-    short: "Leading multidisciplinary water work from coordination to delivery.",
     description: "Projects where my role centred on coordinating people, technical workstreams, data, partners and delivery across the project cycle.",
   },
   {
     id: "feasibility",
     index: "02",
     title: "Feasibility studies",
-    short: "Testing what is technically practical before investment.",
     description: "Assessments that combine field evidence, hydrology and option analysis to determine which interventions are viable and where they can work.",
   },
   {
     id: "planning",
     index: "03",
     title: "Water resource management & investment planning",
-    short: "Turning water evidence into priorities, strategies and investment pathways.",
     description: "Work that connects water availability, demand, climate risk and system performance with long-term management and investment decisions.",
   },
   {
     id: "infrastructure",
     index: "04",
     title: "Water infrastructure design & development",
-    short: "Translating water needs into buildable, resilient systems.",
     description: "Engineering projects covering surveys, rehabilitation, design, costing, tender support, construction supervision and practical water-supply development.",
   },
 ];
@@ -219,22 +215,6 @@ export default function ProjectsPage() {
       intro="My work spans the full development pathway of water projects: managing multidisciplinary assignments, testing feasibility, shaping resource and investment plans, and designing infrastructure for implementation."
     />
     <section className="project-archive section-shell">
-      <div className="archive-summary"><span>10 selected projects</span><span>Europe + Africa</span><span>Feasibility → planning → delivery</span></div>
-
-      <nav className="theme-index" aria-label="Project themes">
-        {themes.map((theme) => {
-          const count = projects.filter((project) => project.theme === theme.id).length;
-          return <a href={`#${theme.id}`} className="theme-index-card" data-theme={theme.id} key={theme.id}>
-            <span className="theme-index-number">{theme.index}</span>
-            <div>
-              <strong>{theme.title}</strong>
-              <p>{theme.short}</p>
-            </div>
-            <span className="theme-index-count">{count} {count === 1 ? "project" : "projects"}</span>
-          </a>;
-        })}
-      </nav>
-
       <div className="project-themes">
         {themes.map((theme) => {
           const themeProjects = projects.filter((project) => project.theme === theme.id);
