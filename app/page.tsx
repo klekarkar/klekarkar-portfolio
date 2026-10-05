@@ -25,7 +25,7 @@ const projects: SelectedWork[] = [
     subtitle:
       "A process-oriented model that turns the ‘sponge effect’ of soils and nature-based solutions into measurable water benefits.",
     detail:
-      "At Boechout, SPONGE traces how rainfall becomes interception, storage, runoff, drainage and recharge—before and after an intervention.",
+      "At Boechout, SPONGE traces how rainfall becomes interception, storage, runoff, drainage and recharge before and after an intervention.",
     tags: ["Nature-based solutions", "Python", "Decision support"],
     visual: "sponge",
     proof: "Field data + process modelling",
@@ -76,7 +76,7 @@ const capabilities = [
   {
     index: "02",
     title: "Build the evidence",
-    body: "I combine hydrological models, geospatial data and field observations to test scenarios and quantify uncertainty—not just produce attractive maps.",
+    body: "I combine hydrological models, geospatial data and field observations to test scenarios and quantify uncertainty, not just produce attractive maps.",
     image: "/work/build-the-evidence-v3.webp",
   },
   {
@@ -135,7 +135,6 @@ export default function Home() {
         <HydrologyLive />
         <div className="hero-copy">
           <div className="hero-primary">
-            <p className="kicker"><span /> Hydrologist · Water resources engineer</p>
             <h1>Practical water solutions for a <em>changing climate.</em></h1>
             <div className="hero-actions">
               <a className="button button-primary" href="#work">Explore my work <ArrowIcon /></a>
@@ -149,16 +148,10 @@ export default function Home() {
 
           <div className="hero-introduction">
             <p>I am a hydrologist and water resources engineer with experience across research, consulting and infrastructure projects in Europe and Africa.</p>
-            <p>My work focuses on a deceptively simple question: how much water is available, now and in the future? Answering it means connecting climate, soils, vegetation, rivers and groundwater—and presenting the result so that it leads to a better decision.</p>
-            <p>I combine hydrological science, modelling and engineering to understand water-resource challenges—and develop practical responses that can be implemented in the real world.</p>
+            <p>My work asks a deceptively simple question: how much water is available now, and how much will be available in the future? I examine how climate, ecosystems and hydrology interact, then turn that evidence into decisions.</p>
+            <p>I combine hydrological science, modelling and engineering to understand water-resource challenges and develop practical responses that can be implemented in the real world.</p>
           </div>
         </div>
-      </section>
-
-      <section className="credential-strip" aria-label="Professional profile">
-        <div><small>BACKGROUND</small><strong>PhD · Engineering Sciences</strong><span>Vrije Universiteit Brussel</span></div>
-        <div><small>FOCUS</small><strong>Water Security</strong><span>Climate change · water availability · adaptation</span></div>
-        <div><small>APPROACH</small><strong>Science into practice</strong><span>Science · decisions · solutions</span></div>
       </section>
 
       <section className="work section-shell" id="work">

@@ -617,3 +617,83 @@ footer { align-items:center;background:var(--navy);color:white;display:grid;font
   .hero-introduction{padding:22px 21px}
   .hero-introduction p{font-size:16px;line-height:1.5;margin-bottom:15px}
 }
+
+/* Crisp homepage refinements and five-scene hydrology sequence */
+.hero-copy{
+  gap:clamp(42px,4.5vw,76px);
+  grid-template-columns:minmax(460px,.9fr) minmax(620px,1.1fr);
+  padding-left:clamp(26px,4.5vw,76px);
+  padding-right:clamp(26px,4.5vw,76px);
+}
+.hero-primary{max-width:720px}
+.hero-copy h1{font-size:clamp(50px,5.4vw,82px)}
+.hero-introduction{
+  background:rgba(4,20,35,.46);
+  border:1px solid rgba(120,212,210,.25);
+  border-left-color:rgba(120,212,210,.25);
+  border-radius:16px;
+  display:grid;
+  gap:clamp(18px,2vw,28px);
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  isolation:isolate;
+  max-width:none;
+  overflow:hidden;
+  padding:25px 27px;
+  position:relative;
+}
+.hero-introduction::before{
+  animation:aboutEdgeGlow 7s linear infinite;
+  background:conic-gradient(from 0deg,transparent 0 68%,rgba(120,212,210,.12) 73%,rgba(120,212,210,.95) 80%,rgba(11,163,199,.7) 84%,transparent 91%);
+  border-radius:inherit;
+  content:"";
+  inset:-1px;
+  padding:2px;
+  pointer-events:none;
+  position:absolute;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  z-index:2;
+}
+.hero-introduction p{font-size:clamp(15px,1.05vw,17px);line-height:1.52;margin:0;position:relative;z-index:1}
+@keyframes aboutEdgeGlow{to{transform:rotate(360deg)}}
+
+.hero-sequence-layer{animation:heroSceneCycle 50s ease-in-out infinite;height:100%;inset:0;opacity:0;overflow:hidden;position:absolute;z-index:0}
+.hero-sequence-layer>img{animation:heroSceneDrift 12s ease-in-out infinite alternate;height:100%;inset:0;object-fit:cover;position:absolute;width:100%}
+.catchment-overview.hero-sequence-layer{animation-delay:-2s;z-index:0}
+.hydrology-process-layer.hero-sequence-layer{animation-delay:8s;z-index:1}
+.drought-sequence{animation-delay:18s}
+.rain-sequence{animation-delay:28s}
+.forest-sequence{animation-delay:38s}
+.rain-sequence>img{object-position:center center}
+.forest-sequence>img{object-position:center 56%}
+@keyframes heroSceneCycle{
+  0%{opacity:0}
+  4%,18%{opacity:1}
+  22%,100%{opacity:0}
+}
+@keyframes heroSceneDrift{from{transform:scale(1.015)}to{transform:scale(1.07) translate3d(.6%,-.35%,0)}}
+
+@media (max-width:1220px){
+  .hero-copy{grid-template-columns:minmax(390px,.88fr) minmax(530px,1.12fr)}
+  .hero-introduction{grid-template-columns:1fr 1fr}
+  .hero-introduction p:first-child{grid-column:1/-1}
+}
+
+@media (max-width:980px){
+  .hero-copy{display:flex;padding-left:clamp(24px,6vw,58px);padding-right:clamp(24px,6vw,58px)}
+  .hero-primary,.hero-introduction{max-width:760px}
+  .hero-introduction{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width:680px){
+  .hero-introduction{display:block;padding:21px}
+  .hero-introduction p{margin-bottom:15px}
+  .hero-introduction p:last-child{margin-bottom:0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hero-introduction::before,.hero-sequence-layer,.hero-sequence-layer>img{animation:none!important}
+  .hero-sequence-layer{opacity:0}.catchment-overview.hero-sequence-layer{opacity:1}
+}
