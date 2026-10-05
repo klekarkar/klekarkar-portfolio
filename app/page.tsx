@@ -134,18 +134,23 @@ export default function Home() {
       <section className="hero" id="top">
         <HydrologyLive />
         <div className="hero-copy">
-          <p className="kicker"><span /> Hydrologist · Water resources engineer</p>
-          <h1>Practical water solutions for a <em>changing climate.</em></h1>
-          <p className="hero-intro">
-            I combine hydrological science, modelling and engineering to understand water-resource challenges—and develop practical responses that can be implemented in the real world.
-          </p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="#work">Explore my work <ArrowIcon /></a>
-            <a className="button button-quiet" href="mailto:katoria.lesaalon.lekarkar@vub.be">Contact me</a>
+          <div className="hero-primary">
+            <p className="kicker"><span /> Hydrologist · Water resources engineer</p>
+            <h1>Practical water solutions for a <em>changing climate.</em></h1>
+            <div className="hero-actions">
+              <a className="button button-primary" href="#work">Explore my work <ArrowIcon /></a>
+              <a className="button button-quiet" href="mailto:katoria.lesaalon.lekarkar@vub.be">Contact me</a>
+            </div>
+            <div className="hero-meta">
+              <span><i className="pulse" /> Based in Belgium</span>
+              <span>Working internationally</span>
+            </div>
           </div>
-          <div className="hero-meta">
-            <span><i className="pulse" /> Based in Belgium</span>
-            <span>Working internationally</span>
+
+          <div className="hero-introduction">
+            <p>I am a hydrologist and water resources engineer with experience across research, consulting and infrastructure projects in Europe and Africa.</p>
+            <p>My work focuses on a deceptively simple question: how much water is available, now and in the future? Answering it means connecting climate, soils, vegetation, rivers and groundwater—and presenting the result so that it leads to a better decision.</p>
+            <p>I combine hydrological science, modelling and engineering to understand water-resource challenges—and develop practical responses that can be implemented in the real world.</p>
           </div>
         </div>
       </section>
@@ -156,26 +161,9 @@ export default function Home() {
         <div><small>APPROACH</small><strong>Science into practice</strong><span>Science · decisions · solutions</span></div>
       </section>
 
-      <section className="about section-shell" id="about">
-        <div className="section-label"><span>01</span> ABOUT</div>
-        <div className="about-grid">
-          <h2>From understanding the system to <em>implementing</em> the response.</h2>
-          <div className="about-copy">
-            <p>I am Katoria Lekarkar, a hydrologist and water resources engineer with experience across research, consulting and infrastructure projects in Europe and Africa.</p>
-            <p>My work focuses on a deceptively simple question: how much water is available, now and in the future? Answering it means connecting climate, soils, vegetation, rivers and groundwater—and presenting the result so that it leads to a better decision.</p>
-            <p>I combine hydrological science, modelling and engineering to understand water-resource challenges—and develop practical responses that can be implemented in the real world.</p>
-            <div className="profile-signature" aria-label="Katoria Lekarkar, hydrologist and water resources engineer">
-              <span className="profile-initials" aria-hidden="true">KL</span>
-              <span><strong>Katoria Lekarkar</strong><small>Hydrologist · Engineer · Model developer</small></span>
-            </div>
-            <a className="text-link" href="#expertise">See how I work <ArrowIcon /></a>
-          </div>
-        </div>
-      </section>
-
       <section className="work section-shell" id="work">
         <div className="section-heading">
-          <div className="section-label light"><span>02</span> SELECTED WORK</div>
+          <div className="section-label light"><span>01</span> SELECTED WORK</div>
           <h2>From national climate questions to local solutions.</h2>
           <p>Research and field engineering that connect climate-scale change with practical water security.</p>
         </div>
@@ -201,7 +189,7 @@ export default function Home() {
 
       <section className="expertise section-shell" id="expertise">
         <div className="section-heading dark-text">
-          <div className="section-label"><span>03</span> EXPERTISE</div>
+          <div className="section-label"><span>02</span> EXPERTISE</div>
           <h2>A rigorous route from question to action.</h2>
         </div>
         <div className="capability-grid">
