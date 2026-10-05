@@ -11,6 +11,10 @@ type SelectedWork = {
   visual?: "sponge" | "recharge";
   image?: string;
   credit?: string;
+  proof: string;
+  proofLabel: string;
+  href: string;
+  action: string;
 };
 
 const projects: SelectedWork[] = [
@@ -24,6 +28,10 @@ const projects: SelectedWork[] = [
       "At Boechout, SPONGE traces how rainfall becomes interception, storage, runoff, drainage and recharge—before and after an intervention.",
     tags: ["Nature-based solutions", "Python", "Decision support"],
     visual: "sponge",
+    proof: "Field data + process modelling",
+    proofLabel: "Evidence for nature-based water retention",
+    href: "/projects#water-retention-boechout",
+    action: "View project",
   },
   {
     number: "02",
@@ -35,6 +43,10 @@ const projects: SelectedWork[] = [
       "Across ten climate models and four emissions pathways, recharge shifts decisively toward winter as summer and autumn losses deepen.",
     tags: ["mHM", "ISIMIP", "Climate scenarios"],
     visual: "recharge",
+    proof: "10 climate models · 4 scenarios",
+    proofLabel: "A national ensemble assessment for Belgium",
+    href: "/projects#groundwater-recharge-projections",
+    action: "View project",
   },
   {
     number: "03",
@@ -47,28 +59,10 @@ const projects: SelectedWork[] = [
     tags: ["Masterplanning", "Water security", "Rural Focus"],
     image: "/projects/ol-pejeta-masterplan.webp",
     credit: "Photo: Thomas Lindvig",
-  },
-  {
-    number: "04",
-    eyebrow: "Kenya · Rainwater harvesting",
-    title: "Meibae rock catchment",
-    subtitle:
-      "A rock-catchment reservoir and solar-pumped supply designed for a remote rangers’ camp.",
-    detail:
-      "Feasibility, engineering design and construction supervision delivered 150,000 litres of storage and a more reliable permanent supply.",
-    tags: ["Rainwater harvesting", "Engineering design", "Rural Focus"],
-    image: "/projects/meibae-rock-catchment.webp",
-  },
-  {
-    number: "05",
-    eyebrow: "Kenya · Spring protection",
-    title: "Loiragai Spring",
-    subtitle:
-      "Rehabilitation design for a gravity-fed spring system serving people, livestock and wildlife.",
-    detail:
-      "The assessment restored the system around environmental-flow requirements, stronger crossings and more reliable consumer points.",
-    tags: ["Water supply", "Rehabilitation", "Rural Focus"],
-    image: "/projects/loiragai-spring.webp",
+    proof: "20-year masterplan",
+    proofLabel: "Phased investment for water security",
+    href: "/projects#ol-pejeta-masterplan",
+    action: "View project",
   },
 ];
 
@@ -170,6 +164,10 @@ export default function Home() {
           <div className="about-copy">
             <p>I am Katoria Lekarkar, a hydrologist and water resources engineer with experience across research, consulting and infrastructure projects in Europe and Africa.</p>
             <p>My work focuses on a deceptively simple question: how much water is available, now and in the future? Answering it means connecting climate, soils, vegetation, rivers and groundwater—and presenting the result so that it leads to a better decision.</p>
+            <div className="profile-signature" aria-label="Katoria Lekarkar, hydrologist and water resources engineer">
+              <span className="profile-initials" aria-hidden="true">KL</span>
+              <span><strong>Katoria Lekarkar</strong><small>Hydrologist · Engineer · Model developer</small></span>
+            </div>
             <a className="text-link" href="#expertise">See how I work <ArrowIcon /></a>
           </div>
         </div>
@@ -182,8 +180,8 @@ export default function Home() {
           <p>Research and field engineering that connect climate-scale change with practical water security.</p>
         </div>
         <div className="project-list">
-          {projects.map((project) => (
-            <article className="project-card" key={project.title}>
+          {projects.map((project, index) => (
+            <article className={`project-card ${index === 0 ? "project-featured" : "project-compact"}`} key={project.title}>
               <ProjectVisual type={project.visual} image={project.image} credit={project.credit} />
               <div className="project-content">
                 <div className="project-number">{project.number}</div>
@@ -191,11 +189,14 @@ export default function Home() {
                 <h3>{project.title}</h3>
                 <p className="project-lead">{project.subtitle}</p>
                 <p className="project-detail">{project.detail}</p>
+                <div className="project-proof"><strong>{project.proof}</strong><span>{project.proofLabel}</span></div>
                 <div className="tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                <a className="project-link" href={project.href}>{project.action} <span className="project-link-icon"><ArrowIcon /></span></a>
               </div>
             </article>
           ))}
         </div>
+        <div className="work-footer"><p>Explore climate impacts and mitigation, project management, feasibility, investment planning and infrastructure delivery.</p><a className="button work-button" href="/projects">View all projects <ArrowIcon /></a></div>
       </section>
 
       <section className="expertise section-shell" id="expertise">
@@ -220,9 +221,9 @@ export default function Home() {
       <section className="contact" id="contact">
         <div className="contact-watermark" aria-hidden="true">WATER</div>
         <div className="contact-inner">
-          <p className="kicker light-kicker"><span /> AVAILABLE FOR THE NEXT CHALLENGE</p>
+          <p className="kicker light-kicker"><span /> OPEN TO THE RIGHT COLLABORATION</p>
           <h2>Let’s make the water<br />picture <em>clearer.</em></h2>
-          <p>If you are working on water availability, drought resilience, climate adaptation or nature-based solutions, I would be glad to hear from you.</p>
+          <p>I am open to water-resources and ecohydrology roles, research–industry collaborations, and selected consulting projects focused on water availability, climate adaptation and nature-based solutions.</p>
           <a className="button contact-button" href="mailto:katoria.lesaalon.lekarkar@vub.be">Start a conversation <ArrowIcon /></a>
           <div className="social-links"><a href="https://www.linkedin.com/in/katoria-lekarkar-504839101/">LinkedIn</a><a href="https://scholar.google.com/citations?user=_rBmLxQAAAAJ&hl=en">Google Scholar</a><a href="https://github.com/klekarkar">GitHub</a><a href="https://orcid.org/0000-0003-4527-5422">ORCID</a></div>
         </div>

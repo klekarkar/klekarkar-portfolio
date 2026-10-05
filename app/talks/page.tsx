@@ -4,6 +4,7 @@ import { ArrowIcon, InnerHero, SiteFooter, SiteHeader } from "../site-chrome";
 export const metadata: Metadata = {
   title: "Talks | Katoria Lekarkar",
   description: "Selected talks on hydrology, nature-based solutions, drought, open science and low-cost monitoring.",
+  alternates: { canonical: "/talks" },
   openGraph: { title: "Talks | Katoria Lekarkar", description: "Hydrology shared in rooms where research meets practice.", images: [] },
   twitter: { title: "Talks | Katoria Lekarkar", description: "Hydrology shared in rooms where research meets practice.", images: [] },
 };

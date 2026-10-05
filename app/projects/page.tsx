@@ -4,6 +4,7 @@ import { ArrowIcon, InnerHero, SiteFooter, SiteHeader } from "../site-chrome";
 export const metadata: Metadata = {
   title: "Projects | Katoria Lekarkar",
   description: "Selected water resources, climate resilience and hydrology projects in Europe and Africa.",
+  alternates: { canonical: "/projects" },
   openGraph: { title: "Projects | Katoria Lekarkar", description: "Water resources work from catchment planning to climate adaptation.", images: [] },
   twitter: { title: "Projects | Katoria Lekarkar", description: "Water resources work from catchment planning to climate adaptation.", images: [] },
 };
@@ -11,10 +12,11 @@ export const metadata: Metadata = {
 // To add a project, copy one object, keep the same field names and edit its content.
 const projects = [
   {
+    id: "water-retention-boechout",
     year: "2023–2026",
     place: "Boechout, Belgium",
-    title: "Water retention potential of a nature conservation area",
-    theme: "feasibility",
+    title: "SPONGE: water retention and nature-based solutions",
+    theme: "climate",
     image: "/work/sponge-nature-based-solutions.webp",
     copy: "Combining soil-moisture observations, groundwater data and a mechanistic model to evaluate how restored landscapes retain water.",
     narrative: [
@@ -26,6 +28,28 @@ const projects = [
     tone: "aqua",
   },
   {
+    id: "groundwater-recharge-projections",
+    year: "2024–2026",
+    place: "Belgium",
+    title: "Climate change impacts on groundwater recharge",
+    theme: "climate",
+    image: "/work/build-the-evidence-v3.webp",
+    copy: "A ten-model, four-scenario assessment of how climate change reshapes the seasonal timing and annual availability of groundwater recharge across Belgium.",
+    narrative: [
+      "This national study assesses how climate change may alter groundwater recharge across Belgium up to 2100. I drove the mHM hydrological model with projections from ten global climate models under four pathways, from SSP1–2.6 to SSP5–8.5, and evaluated both the ensemble response and the uncertainty between models.",
+      "The results show that wetter winters do not translate into equally large recharge gains. Winter precipitation increases by 11.8–28.5%, while winter recharge rises by only 4.0–8.6%. Summer and autumn recharge decline much more strongly—by 11.7–53.8% and 11.6–42.3%, respectively—as summer rainfall decreases, atmospheric water demand rises and soil-moisture deficits persist into autumn.",
+      "Recharge therefore becomes increasingly concentrated in winter and spring: their combined share rises from 68.5% historically to 82.0% under SSP5–8.5. The findings help clarify when groundwater systems may be most vulnerable and why adaptation must combine demand management with measures that retain and infiltrate water when it is available.",
+    ],
+    highlights: [
+      "Evaluated ten climate models across four SSP pathways to 2100.",
+      "Quantified seasonal change, spatial variability and ensemble uncertainty across Belgium.",
+      "Linked recharge changes to precipitation, atmospheric water demand and antecedent soil-moisture conditions.",
+    ],
+    tags: ["Climate projections", "Groundwater recharge", "mHM"],
+    tone: "blue",
+  },
+  {
+    id: "open-water-science",
     year: "2023–2026",
     place: "Brussels · International",
     title: "UNESCO Chair on Open Water Science and Education",
@@ -46,6 +70,7 @@ const projects = [
     tone: "blue",
   },
   {
+    id: "loiragai-spring",
     year: "2020",
     place: "Laikipia, Kenya",
     title: "Loiragai Spring Water Supply",
@@ -66,6 +91,7 @@ const projects = [
     tone: "green",
   },
   {
+    id: "conservancy-water-plans",
     year: "2019",
     place: "Laikipia & Samburu, Kenya",
     title: "Community conservancy water management plans",
@@ -80,6 +106,7 @@ const projects = [
     tone: "sand",
   },
   {
+    id: "ol-pejeta-masterplan",
     year: "2018–2019",
     place: "Laikipia, Kenya",
     title: "Ol Pejeta Conservancy water masterplan",
@@ -101,6 +128,7 @@ const projects = [
     credit: "Photo: Thomas Lindvig",
   },
   {
+    id: "climate-resilient-services",
     year: "2017–2019",
     place: "Northern Kenya",
     title: "Climate-resilient water services for conservancies",
@@ -115,6 +143,7 @@ const projects = [
     tone: "aqua",
   },
   {
+    id: "meibae-rock-catchment",
     year: "2018–2019",
     place: "Samburu, Kenya",
     title: "Meibae rock-catchment water supply",
@@ -135,6 +164,7 @@ const projects = [
     tone: "sand",
   },
   {
+    id: "fao-dryland-agriculture",
     year: "2017",
     place: "Turkana, Kenya",
     title: "FAO dryland agriculture and water harvesting",
@@ -151,6 +181,7 @@ const projects = [
     credit: "Photo: FAO",
   },
   {
+    id: "unicef-wash-manual",
     year: "2017–2018",
     place: "Kenya",
     title: "UNICEF WASH design manual",
@@ -164,6 +195,7 @@ const projects = [
     tone: "blue",
   },
   {
+    id: "ishaqbin-water-supply",
     year: "2017",
     place: "Tana River, Kenya",
     title: "Ishaqbin community water supply",
@@ -193,14 +225,20 @@ const themes = [
     description: "Assessments that combine field evidence, hydrology and option analysis to determine which interventions are viable and where they can work.",
   },
   {
-    id: "planning",
+    id: "climate",
     index: "03",
+    title: "Climate change impacts & mitigation",
+    description: "Studies that assess how climate change is reshaping water availability and test how modelling and nature-based solutions can strengthen adaptation.",
+  },
+  {
+    id: "planning",
+    index: "04",
     title: "Water resource management & investment planning",
     description: "Work that connects water availability, demand, climate risk and system performance with long-term management and investment decisions.",
   },
   {
     id: "infrastructure",
-    index: "04",
+    index: "05",
     title: "Water infrastructure design & development",
     description: "Engineering projects covering surveys, rehabilitation, design, costing, tender support, construction supervision and practical water-supply development.",
   },
@@ -212,7 +250,7 @@ export default function ProjectsPage() {
       index="01"
       label="Project experience"
       title="Water projects from evidence to implementation."
-      intro="My work spans the full development pathway of water projects: managing multidisciplinary assignments, testing feasibility, shaping resource and investment plans, and designing infrastructure for implementation."
+      intro="My work connects climate-impact research with the full development pathway of water projects: assessing future water availability, testing feasibility, shaping resource and investment plans, and designing infrastructure and nature-based responses."
     />
     <section className="project-archive section-shell">
       <div className="project-themes">
@@ -230,7 +268,7 @@ export default function ProjectsPage() {
 
             <div className="archive-grid">
               {themeProjects.map((project) => {
-                return <article className={`archive-card ${project.tone}`} key={project.title}>
+                return <article className={`archive-card ${project.tone}`} id={project.id} key={project.title}>
                   <div className="archive-visual">
                     <img src={project.image} alt="" />
                     {project.credit && <span className="archive-image-credit">{project.credit}</span>}

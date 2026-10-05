@@ -4,6 +4,7 @@ import { InnerHero, SiteFooter, SiteHeader } from "../site-chrome";
 export const metadata: Metadata = {
   title: "CV | Katoria Lekarkar",
   description: "Experience, education and technical expertise of hydrologist and water resources engineer Katoria Lekarkar.",
+  alternates: { canonical: "/cv" },
   openGraph: { title: "CV | Katoria Lekarkar", description: "Hydrology, water resources and climate adaptation experience.", images: [] },
   twitter: { title: "CV | Katoria Lekarkar", description: "Hydrology, water resources and climate adaptation experience.", images: [] },
 };

@@ -246,6 +246,7 @@ footer { align-items:center;background:var(--navy);color:white;display:grid;font
 
 .theme-index-card[data-theme="management"],.project-theme[data-theme="management"]{--theme-accent:#0a79a5;--theme-accent-soft:rgba(10,121,165,.13);--theme-accent-muted:rgba(10,121,165,.30)}
 .theme-index-card[data-theme="feasibility"],.project-theme[data-theme="feasibility"]{--theme-accent:#168f8a;--theme-accent-soft:rgba(22,143,138,.13);--theme-accent-muted:rgba(22,143,138,.30)}
+.theme-index-card[data-theme="climate"],.project-theme[data-theme="climate"]{--theme-accent:#536fa4;--theme-accent-soft:rgba(83,111,164,.13);--theme-accent-muted:rgba(83,111,164,.30)}
 .theme-index-card[data-theme="planning"],.project-theme[data-theme="planning"]{--theme-accent:#4a8b62;--theme-accent-soft:rgba(74,139,98,.13);--theme-accent-muted:rgba(74,139,98,.30)}
 .theme-index-card[data-theme="infrastructure"],.project-theme[data-theme="infrastructure"]{--theme-accent:#a96f39;--theme-accent-soft:rgba(169,111,57,.13);--theme-accent-muted:rgba(169,111,57,.30)}
 .theme-index-card{border-radius:18px;border-top:3px solid var(--theme-accent);box-shadow:0 12px 32px rgba(7,29,50,.045)}
@@ -301,4 +302,55 @@ footer { align-items:center;background:var(--navy);color:white;display:grid;font
   .research-list{gap:22px;padding-top:64px}
   .research-list article,.talks-grid article,.talks-grid article:nth-child(even){border-radius:18px;padding:26px}
   .talks-grid{gap:22px}
+}
+
+/* Focused homepage: shorter opening, clearer proof and fewer featured cases */
+.hero{min-height:650px}
+.hero-copy{padding-bottom:66px;padding-top:72px}
+.hero-visual{min-height:650px}
+.hero-meta{margin-top:36px}
+
+.profile-signature{align-items:center;border-top:1px solid var(--line);display:flex;gap:14px;margin-top:30px;padding-top:24px}
+.profile-initials{align-items:center;background:var(--navy);border-radius:13px 13px 13px 4px;color:white;display:inline-flex;font-size:12px;font-weight:850;height:46px;justify-content:center;letter-spacing:-.04em;width:46px}
+.profile-signature>span:last-child{display:flex;flex-direction:column;gap:5px}
+.profile-signature strong{color:var(--navy);font-size:14px;letter-spacing:-.01em}
+.profile-signature small{color:var(--muted);font-size:12px;line-height:1.35}
+.profile-signature+.text-link{margin-top:28px}
+
+.project-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+.project-card.project-featured{grid-column:1/-1;grid-template-columns:1.05fr .95fr;min-height:500px}
+.project-card.project-compact{display:flex;flex-direction:column;min-height:0}
+.project-card.project-compact .project-art{min-height:275px;order:1}
+.project-card.project-compact .project-content{justify-content:flex-start;min-height:500px;order:2;padding:44px 40px 38px}
+.project-card.project-compact .project-content h3{font-size:clamp(34px,3.2vw,48px)}
+.project-card.project-compact .project-lead{font-size:19px}
+.project-card.project-compact .project-number{right:24px;top:22px}
+.project-proof{border-bottom:1px solid rgba(255,255,255,.12);border-top:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;gap:5px;margin-top:24px;padding:16px 0}
+.project-proof strong{color:white;font-size:15px;letter-spacing:-.01em}
+.project-proof span{color:rgba(255,255,255,.6);font-size:11px;line-height:1.45}
+.project-link{align-items:center;color:white;display:inline-flex;font-size:13px;font-weight:800;gap:14px;margin-top:26px;width:max-content}
+.project-link-icon{align-items:center;background:var(--water);border-radius:50%;display:inline-flex;height:30px;justify-content:center;transition:background .2s ease,transform .2s ease;width:30px}
+.project-link:hover .project-link-icon{background:var(--aqua);color:var(--navy);transform:translate(2px,-2px)}
+.project-link:focus-visible{outline:2px solid var(--aqua);outline-offset:6px}
+.work-footer{align-items:center;border-top:1px solid rgba(255,255,255,.15);display:flex;gap:36px;justify-content:space-between;margin-top:48px;padding-top:34px}
+.work-footer p{color:rgba(255,255,255,.62);font-family:Georgia,"Times New Roman",serif;font-size:16px;line-height:1.5;margin:0;max-width:610px}
+.work-button{background:white;color:var(--navy);flex:0 0 auto}
+.work-button .arrow-icon{background:rgba(7,29,50,.07);border-radius:50%;height:25px;padding:5px;width:25px}
+.research-list article[id],.project-theme article[id]{scroll-margin-top:110px}
+
+@media (max-width:980px){
+  .hero{min-height:auto}.hero-copy{padding-bottom:64px;padding-top:64px}.hero-visual{min-height:560px}
+  .project-list{grid-template-columns:1fr}
+  .project-card.project-featured{grid-column:auto;grid-template-columns:1fr}
+  .project-card.project-featured .project-art{min-height:400px;order:1}
+  .project-card.project-featured .project-content{order:2}
+  .project-card.project-compact .project-content{min-height:0}
+}
+
+@media (max-width:680px){
+  .hero-copy{padding-bottom:54px;padding-top:54px}.hero-visual{min-height:460px}
+  .project-card.project-featured .project-art,.project-card.project-compact .project-art{min-height:240px}
+  .project-card.project-featured .project-content,.project-card.project-compact .project-content{min-height:0;padding:34px 26px}
+  .project-card.project-compact .project-content h3{font-size:34px}
+  .work-footer{align-items:stretch;flex-direction:column}.work-footer .button{width:100%}
 }
