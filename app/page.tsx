@@ -132,11 +132,12 @@ export default function Home() {
       <SiteHeader home />
 
       <section className="hero" id="top">
+        <HydrologyLive />
         <div className="hero-copy">
           <p className="kicker"><span /> Hydrologist · Water resources engineer</p>
-          <h1>Making water<br />systems <em>clear.</em></h1>
+          <h1>Practical water solutions for a <em>changing climate.</em></h1>
           <p className="hero-intro">
-            I combine hydrological science, modelling and practical engineering to understand water availability—and design responses that hold up in a changing climate.
+            I combine hydrological science, modelling and engineering to understand water-resource challenges—and develop practical responses that can be implemented in the real world.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#work">Explore my work <ArrowIcon /></a>
@@ -147,8 +148,6 @@ export default function Home() {
             <span>Working internationally</span>
           </div>
         </div>
-
-        <HydrologyLive />
       </section>
 
       <section className="credential-strip" aria-label="Professional profile">
@@ -160,10 +159,11 @@ export default function Home() {
       <section className="about section-shell" id="about">
         <div className="section-label"><span>01</span> ABOUT</div>
         <div className="about-grid">
-          <h2>I work where hydrology, modelling and <em>implementation</em> meet.</h2>
+          <h2>From understanding the system to <em>implementing</em> the response.</h2>
           <div className="about-copy">
             <p>I am Katoria Lekarkar, a hydrologist and water resources engineer with experience across research, consulting and infrastructure projects in Europe and Africa.</p>
             <p>My work focuses on a deceptively simple question: how much water is available, now and in the future? Answering it means connecting climate, soils, vegetation, rivers and groundwater—and presenting the result so that it leads to a better decision.</p>
+            <p>I combine hydrological science, modelling and engineering to understand water-resource challenges—and develop practical responses that can be implemented in the real world.</p>
             <div className="profile-signature" aria-label="Katoria Lekarkar, hydrologist and water resources engineer">
               <span className="profile-initials" aria-hidden="true">KL</span>
               <span><strong>Katoria Lekarkar</strong><small>Hydrologist · Engineer · Model developer</small></span>

@@ -13,7 +13,7 @@ test("renders the portfolio homepage", async () => {
   const html = await response.text();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-  assert.match(html, /Making water/);
+  assert.match(html, /Practical water solutions/);
   assert.match(html, /SPONGE/);
   assert.match(html, /Katoria Lekarkar/);
   assert.match(html, /Hydrologist &amp; Water Resources Engineer/);

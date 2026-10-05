@@ -258,12 +258,15 @@ export default function ProjectsPage() {
           const themeProjects = projects.filter((project) => project.theme === theme.id);
           return <section className="project-theme" data-theme={theme.id} id={theme.id} key={theme.id}>
             <header className="project-theme-header">
-              <span className="project-theme-number">{theme.index}</span>
-              <div>
-                <p>Area of work</p>
-                <h2>{theme.title}</h2>
+              <div className="project-theme-heading">
+                <span className="project-theme-number">{theme.index}</span>
+                <div>
+                  <p>Area of work</p>
+                  <h2>{theme.title}</h2>
+                </div>
               </div>
               <p className="project-theme-description">{theme.description}</p>
+              <span className="project-theme-count">{themeProjects.length} {themeProjects.length === 1 ? "project" : "projects"}</span>
             </header>
 
             <div className="archive-grid">
